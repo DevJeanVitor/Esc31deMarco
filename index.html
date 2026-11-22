@@ -715,7 +715,7 @@
       </div>
     </section>
 
-    <section id="premiacoes" data-section="sobre" class="bg-gradient-to-br from-[#122244] via-escola-navy to-[#1B3870] text-white py-8 sm:py-11">
+    <section id="premiacoes" data-section="sobre" class="scroll-mt-28 bg-gradient-to-br from-[#122244] via-escola-navy to-[#1B3870] text-white py-8 sm:py-11">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="text-center max-w-2xl mx-auto mb-8">
@@ -1588,10 +1588,13 @@
                 class="w-full h-full object-cover object-center transition-opacity duration-700"
                 onerror="handlePhotoFallback(this, 'Oficinas de Robótica e Tecnologia', '#182E59')"
               />
-            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0D1A36]/95 via-[#182E59]/70 to-transparent p-5 text-white">
-              <span id="extra-carousel-tag" class="inline-block bg-escola-gold text-escola-navy text-xs font-extrabold uppercase tracking-wider px-3.5 py-1 r-25 shadow-sm">  
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0D1A36]/95 via-[#182E59]/70 to-transparent p-5 text-white">
+                <span id="extra-carousel-tag" class="inline-block bg-escola-gold text-escola-navy text-xs font-extrabold uppercase tracking-wider px-3.5 py-1 r-25 shadow-sm mb-1.5">
                   Kits de Robótica e Componentes Eletrônicos
                 </span>
+                <p id="extra-carousel-label" class="text-sm sm:text-base font-bold mt-0.5 leading-snug">
+                  Placas Arduino, protoboards, sensores ultrassônicos, servomotores, displays e resistores nas oficinas práticas.
+                </p>
               </div>
             </div>
           </div>
@@ -1756,9 +1759,9 @@
 
                   <div class="space-y-3.5 text-sm sm:text-base">
                     <div class="flex items-center justify-between gap-2 bg-white/5 hover:bg-white/10 px-3.5 py-2.5 r-25 transition-colors">
-                      <a href="tel:+5582987331869" data-phone-link="secretaria" class="flex items-center gap-3 font-bold hover:text-escola-gold transition-colors">
+                      <a href="tel:+5582912345678" data-phone-link="secretaria" class="flex items-center gap-3 font-bold hover:text-escola-gold transition-colors">
                         <img src="Imagens/Icones/contato-telefone.png" alt="Telefone" loading="lazy" decoding="async" class="w-5 h-5 object-contain invert" onerror="handleIconFallback(this, 'phone')" />
-                        <span id="phone-text-secretaria">(82) 9 8733-1869</span>
+                        <span id="phone-text-secretaria">(82) 9 1234-5678</span>
                       </a>
                       <button
                         type="button"
@@ -1778,7 +1781,7 @@
                 <div class="mt-7">
                   <a
                     id="link-whatsapp-secretaria"
-                    href="https://wa.me/+5582987331869"
+                    href="https://wa.me/5582912345678?text=Ol%C3%A1%2C%20gostaria%20de%20atendimento%20da%20Secretaria%20da%20Escola%20Municipal%2031%20de%20Mar%C3%A7o."
                     target="_blank"
                     rel="noopener noreferrer"
                     data-official-link="whatsapp-secretaria"
@@ -1809,9 +1812,9 @@
 
                   <div class="space-y-3.5 text-sm sm:text-base">
                     <div class="flex items-center justify-between gap-2 bg-white/5 hover:bg-white/10 px-3.5 py-2.5 r-25 transition-colors">
-                      <a href="tel:++5582996602772" data-phone-link="coordenacao" class="flex items-center gap-3 font-bold hover:text-escola-gold transition-colors">
+                      <a href="tel:+5582912345678" data-phone-link="coordenacao" class="flex items-center gap-3 font-bold hover:text-escola-gold transition-colors">
                         <img src="Imagens/Icones/contato-telefone.png" alt="Telefone" loading="lazy" decoding="async" class="w-5 h-5 object-contain invert" onerror="handleIconFallback(this, 'phone')" />
-                        <span id="phone-text-coordenacao">(82) 9 9660-2772</span>
+                        <span id="phone-text-coordenacao">(82) 9 1234-5678</span>
                       </a>
                       <button
                         type="button"
@@ -1831,7 +1834,7 @@
                 <div class="mt-7">
                   <a
                     id="link-whatsapp-coordenacao"
-                    href="https://wa.me/+5582996602772"
+                    href="https://wa.me/5582912345678?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20Coordena%C3%A7%C3%A3o%20da%20Escola%20Municipal%2031%20de%20Mar%C3%A7o."
                     target="_blank"
                     rel="noopener noreferrer"
                     data-official-link="whatsapp-coordenacao"
@@ -2029,7 +2032,7 @@
   </footer>
 
   <div id="trophy-modal" role="dialog" aria-modal="true" aria-labelledby="trophy-modal-title" class="fixed inset-0 z-50 hidden bg-escola-navy/90 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-white r-25 max-w-5xl w-full p-6 sm:p-10 shadow-2xl relative fade-slide max-h-[94vh] overflow-y-auto">
+    <div class="bg-white r-25 max-w-5xl w-full p-4 sm:p-8 shadow-2xl relative fade-slide max-h-[94vh] overflow-y-auto">
       <button
         type="button"
         onclick="closeTrophyModal()"
@@ -2048,25 +2051,25 @@
         </h2>
       </div>
 
-      <div class="flex items-center justify-center gap-3 sm:gap-6">
+      <div class="flex items-center justify-center gap-2 sm:gap-4 lg:gap-6 w-full">
         <button
           type="button"
           onclick="changeTrophy(-1)"
           aria-label="Troféu anterior"
-          class="btn-press w-11 h-11 sm:w-12 sm:h-12 r-25 bg-escola-navy text-white flex items-center justify-center shadow-md shrink-0 text-xl font-bold"
+          class="btn-press w-[42px] h-[42px] sm:w-[48px] sm:h-[48px] r-25 bg-escola-navy text-white flex items-center justify-center shadow-md shrink-0 text-xl font-bold"
         >
           ‹
         </button>
 
-        <div onclick="changeTrophy(-1)" class="hidden md:block w-44 h-56 r-25 overflow-hidden bg-[#0A0F1A] border-2 border-slate-300 cursor-pointer blur-[2px] opacity-65 scale-90 transition-all p-2">
+        <div onclick="changeTrophy(-1)" class="hidden lg:block w-[160px] xl:w-[176px] h-[210px] xl:h-[224px] r-25 overflow-hidden bg-[#0A0F1A] border-2 border-slate-300 cursor-pointer blur-[2px] opacity-65 scale-90 transition-all p-2 shrink-0">
           <img id="trophy-prev-img" src="Imagens/Trofeús/trofeu4.png" alt="Troféu anterior" loading="lazy" decoding="async" class="w-full h-full object-contain" onerror="handlePhotoFallback(this, 'Troféu 4', '#AA8407')" />
         </div>
 
-        <div style="border-color: #AA8407;" class="w-64 h-80 sm:w-80 sm:h-96 r-25 overflow-hidden bg-[#05080F] border-4 shadow-2xl shrink-0 p-3 flex items-center justify-center">
+        <div style="border-color: #AA8407;" class="flex-1 min-w-0 max-w-[260px] sm:max-w-[320px] h-[270px] sm:h-[360px] r-25 overflow-hidden bg-[#05080F] border-4 shadow-2xl p-3 flex items-center justify-center">
           <img id="trophy-curr-img" src="Imagens/Trofeús/trofeu1.png" alt="Troféu em destaque" loading="lazy" decoding="async" class="w-full h-full object-contain transition-all duration-300" onerror="handlePhotoFallback(this, 'Troféu em Destaque', '#AA8407')" />
         </div>
 
-        <div onclick="changeTrophy(1)" class="hidden md:block w-44 h-56 r-25 overflow-hidden bg-[#0A0F1A] border-2 border-slate-300 cursor-pointer blur-[2px] opacity-65 scale-90 transition-all p-2">
+        <div onclick="changeTrophy(1)" class="hidden lg:block w-[160px] xl:w-[176px] h-[210px] xl:h-[224px] r-25 overflow-hidden bg-[#0A0F1A] border-2 border-slate-300 cursor-pointer blur-[2px] opacity-65 scale-90 transition-all p-2 shrink-0">
           <img id="trophy-next-img" src="Imagens/Trofeús/trofeu2.png" alt="Próximo troféu" loading="lazy" decoding="async" class="w-full h-full object-contain" onerror="handlePhotoFallback(this, 'Troféu 2', '#AA8407')" />
         </div>
 
@@ -2074,7 +2077,7 @@
           type="button"
           onclick="changeTrophy(1)"
           aria-label="Próximo troféu"
-          class="btn-press w-11 h-11 sm:w-12 sm:h-12 r-25 bg-escola-navy text-white flex items-center justify-center shadow-md shrink-0 text-xl font-bold"
+          class="btn-press w-[42px] h-[42px] sm:w-[48px] sm:h-[48px] r-25 bg-escola-navy text-white flex items-center justify-center shadow-md shrink-0 text-xl font-bold"
         >
           ›
         </button>
@@ -2098,7 +2101,7 @@
           onclick="returnToHomeFromTrophy()"
           class="btn-press bg-escola-navy text-white font-extrabold text-sm px-8 py-3.5 r-25 shadow-md"
         >
-          Retornar à Tela Inicial
+          Retornar aos Indicadores
         </button>
       </div>
     </div>
