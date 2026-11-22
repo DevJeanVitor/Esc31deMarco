@@ -1,0 +1,2167 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escola Municipal 31 de Março</title>
+  <meta name="description" content="Plataforma institucional da Escola Municipal 31 de Março - Educação Infantil, Ensino Fundamental I e II, EJA, AEE, Robótica e Cultura Digital." />
+  <link rel="icon" type="image/png" href="Imagens/Logo/logo31demarco.png" />
+  <link rel="preload" as="image" href="Imagens/EquipeDiretiva/equipediretiva.jpg" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            escola: {
+              navy: '#182E59',
+              royal: '#1F438C',
+              sky: '#3DADF2',
+              gold: '#F2D129',
+              ice: '#F2F2F2',
+              amber: '#A67208',
+              ochre: '#AA8407',
+              terracotta: '#BA630D',
+              green: '#185004',
+              earth: '#6F3A06',
+              skySoft: '#EEF6FC',
+              goldSoft: '#FDFBF2',
+            }
+          },
+          borderRadius: {
+            'card': '25px',
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="assets/css/estilos.css" />
+</head>
+
+<body class="antialiased selection:bg-escola-gold selection:text-escola-navy">
+
+  <div id="a11y-bar" role="region" aria-label="Barra de Acessibilidade" class="bg-[#0F1E3C] text-white text-xs sm:text-sm py-2 px-3 sm:px-6 border-b border-white/10 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="hidden md:inline-flex items-center gap-1.5 text-white/80 font-medium">
+          <span class="w-2 h-2 rounded-full bg-escola-gold"></span>
+          Acessibilidade:
+        </span>
+        <a href="#aviso-unidades" onclick="goToUnitsNotice(event)" class="underline hover:text-escola-gold focus:outline-none focus:ring-2 focus:ring-escola-gold px-1.5 py-0.5 rounded">
+          Ir para o conteúdo
+        </a>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+        <div class="inline-flex items-center bg-white/10 rounded-full p-0.5" role="group" aria-label="Tamanho da fonte">
+          <button type="button" onclick="adjustFontSize(-10)" aria-label="Diminuir fonte" class="px-2.5 py-1 rounded-full hover:bg-white/20 font-bold transition min-h-[32px]">
+            A-
+          </button>
+          <button type="button" onclick="resetFontSize()" aria-label="Tamanho padrão da fonte" class="px-2.5 py-1 rounded-full hover:bg-white/20 font-semibold transition min-h-[32px]">
+            A
+          </button>
+          <button type="button" onclick="adjustFontSize(10)" aria-label="Aumentar fonte" class="px-2.5 py-1 rounded-full hover:bg-white/20 font-bold transition min-h-[32px]">
+            A+
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="bg-escola-navy text-white r-bottom-25 shadow-lg sticky top-[44px] sm:top-[48px] z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
+      <a href="#aviso-unidades" onclick="goToUnitsNotice(event)" class="flex items-center gap-3 group focus:outline-none">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white p-1 shadow-md overflow-hidden flex items-center justify-center shrink-0 group-hover:scale-105 transition">
+          <img
+            src="Imagens/Logo/logo31demarco.png"
+            alt="Logo da Escola Municipal 31 de Março"
+            decoding="async"
+            class="w-full h-full object-contain rounded-full"
+            onerror="handlePhotoFallback(this, 'Escola 31 de Março', '#182E59')"
+          />
+        </div>
+        <div class="leading-tight">
+          <span class="block text-xs uppercase tracking-wider text-escola-gold font-bold">Escola Municipal</span>
+          <span class="block text-base sm:text-lg font-extrabold tracking-tight">31 de Março</span>
+        </div>
+      </a>
+
+      <nav aria-label="Navegação Principal" class="hidden xl:flex items-center gap-1.5">
+        <a href="#inicio" data-nav="inicio" onclick="selectNav(this)" class="nav-link active px-4 py-2.5 r-25 text-xs font-bold tracking-wide uppercase">
+          INÍCIO
+        </a>
+        <a href="#sobre" data-nav="sobre" onclick="selectNav(this)" class="nav-link px-4 py-2.5 r-25 text-xs font-bold tracking-wide uppercase hover:bg-white/10">
+          SOBRE A ESCOLA
+        </a>
+        <a href="#ensino" data-nav="ensino" onclick="selectNav(this)" class="nav-link px-4 py-2.5 r-25 text-xs font-bold tracking-wide uppercase hover:bg-white/10">
+          ENSINO
+        </a>
+        <a href="#aee" data-nav="aee" onclick="selectNav(this)" class="nav-link px-4 py-2.5 r-25 text-xs font-bold tracking-wide uppercase hover:bg-white/10">
+          ATENDIMENTO ESPECIALIZADO
+        </a>
+        <a href="#contato" data-nav="contato" onclick="selectNav(this)" class="nav-link px-4 py-2.5 r-25 text-xs font-bold tracking-wide uppercase hover:bg-white/10">
+          CONTATO
+        </a>
+        <a href="#duvidas" data-nav="duvidas" onclick="selectNav(this)" class="nav-link px-4 py-2.5 r-25 text-xs font-bold tracking-wide uppercase hover:bg-white/10">
+          DÚVIDAS FREQUENTES
+        </a>
+      </nav>
+
+      <button
+        type="button"
+        id="mobile-menu-btn"
+        onclick="toggleMobileMenu()"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Abrir menu de navegação"
+        class="xl:hidden p-3 r-25 bg-white/10 hover:bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-escola-gold"
+      >
+        <svg id="icon-menu-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="icon-menu-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden xl:hidden px-4 pb-5 pt-2 border-t border-white/10">
+      <nav class="flex flex-col gap-2" aria-label="Navegação Mobile">
+        <a href="#inicio" data-nav="inicio" onclick="selectNav(this); toggleMobileMenu(false)" class="nav-link active px-4 py-3 r-25 text-sm font-bold uppercase">
+          INÍCIO
+        </a>
+        <a href="#sobre" data-nav="sobre" onclick="selectNav(this); toggleMobileMenu(false)" class="nav-link px-4 py-3 r-25 text-sm font-bold uppercase hover:bg-white/10">
+          SOBRE A ESCOLA
+        </a>
+        <a href="#ensino" data-nav="ensino" onclick="selectNav(this); toggleMobileMenu(false)" class="nav-link px-4 py-3 r-25 text-sm font-bold uppercase hover:bg-white/10">
+          ENSINO
+        </a>
+        <a href="#aee" data-nav="aee" onclick="selectNav(this); toggleMobileMenu(false)" class="nav-link px-4 py-3 r-25 text-sm font-bold uppercase hover:bg-white/10">
+          ATENDIMENTO ESPECIALIZADO
+        </a>
+        <a href="#contato" data-nav="contato" onclick="selectNav(this); toggleMobileMenu(false)" class="nav-link px-4 py-3 r-25 text-sm font-bold uppercase hover:bg-white/10">
+          CONTATO
+        </a>
+        <a href="#duvidas" data-nav="duvidas" onclick="selectNav(this); toggleMobileMenu(false)" class="nav-link px-4 py-3 r-25 text-sm font-bold uppercase hover:bg-white/10">
+          DÚVIDAS FREQUENTES
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <section id="inicio" data-section="inicio" class="bg-gradient-to-b from-[#E5EFFB] via-[#F2F5FA] to-[#E8F2FC] pt-5 sm:pt-7">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div id="aviso-unidades" class="scroll-mt-36 mb-6 bg-white r-25 overflow-hidden shadow-md border-2 border-escola-royal/25 flex items-stretch">
+          <div class="w-3 sm:w-4 bg-escola-navy shrink-0" aria-hidden="true"></div>
+          <div class="p-4 sm:p-6 flex-1 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5">
+            <div class="flex items-start gap-4 flex-1">
+              <div class="w-12 h-12 r-25 bg-escola-skySoft border border-escola-sky/30 flex items-center justify-center shrink-0 mt-0.5">
+                <img
+                  src="Imagens/Icones/endereco-pino-mapa.png"
+                  alt="Ícone de localização das unidades"
+                  decoding="async"
+                  class="w-6 h-6 object-contain"
+                  onerror="handleIconFallback(this, 'pin')"
+                />
+              </div>
+              <div class="flex-1">
+                <span class="inline-flex items-center gap-1.5 bg-escola-gold text-escola-navy text-[11px] font-extrabold uppercase tracking-wider px-3.5 py-1 r-25 mb-3 shadow-xs">
+                  <span class="w-1.5 h-1.5 rounded-full bg-escola-navy"></span>
+                  Aviso Importante • Localização das Unidades
+                </span>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm leading-relaxed">
+                  <div class="bg-[#FDF8E8] border-l-4 border-[#AA8407] px-3.5 py-2.5 rounded-r-2xl">
+                    <strong class="block text-escola-navy font-extrabold">Anexo Escola 31 de Março — Antigo João Paulo II (Ed. Infantil 1 e 2)</strong>
+                    <span class="text-slate-700 text-xs sm:text-sm">R. Bela Vista, 451 – Brasília, Arapiraca – AL, CEP 57313-180.</span>
+                  </div>
+
+                  <div class="bg-[#EEF2FA] border-l-4 border-escola-royal px-3.5 py-2.5 rounded-r-2xl">
+                    <strong class="block text-escola-navy font-extrabold">Sede Principal (Fund. 1, Fund. 2 e EJA)</strong>
+                    <span class="text-slate-700 text-xs sm:text-sm">Rua Brasília, nº 455 — Bairro Brasília, Arapiraca - AL, CEP 57313-130.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="#contato" class="btn-press shrink-0 w-full lg:w-auto text-center bg-escola-navy hover:bg-escola-royal text-white text-xs sm:text-sm font-extrabold px-6 py-3.5 r-25 shadow-md">
+              Ver Endereços e Maps ›
+            </a>
+          </div>
+        </div>
+
+        <div class="relative w-full overflow-hidden r-25 shadow-xl bg-escola-navy aspect-[16/9] sm:aspect-[21/9]">
+          <img
+            src="Imagens/EquipeDiretiva/equipediretiva.jpg"
+            alt="Equipe Diretiva da Escola Municipal 31 de Março"
+            fetchpriority="high"
+            decoding="async"
+            class="w-full h-full object-cover"
+            onerror="handlePhotoFallback(this, 'Equipe Diretiva • Escola Municipal 31 de Março', '#182E59')"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-escola-navy/85 via-escola-navy/20 to-transparent flex items-end p-5 sm:p-8">
+            <div class="max-w-2xl text-white">
+              <span class="inline-block bg-escola-gold text-escola-navy text-xs font-extrabold px-3.5 py-1 r-25 mb-2 uppercase tracking-wide">
+                Bem-vindo à Comunidade Escolar 31 de Março
+              </span>
+              <h1 class="text-xl sm:text-3xl md:text-4xl font-extrabold leading-tight">
+                Educação pública acolhedora, inovadora e premiada
+              </h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 sm:mt-8">
+          <p class="abnt-justify text-base sm:text-lg md:text-xl text-slate-800 leading-relaxed font-medium">
+            Mais do que transmitir conteúdos curriculares tradicionais, o papel da escola é desenvolver o
+            <strong class="text-escola-navy font-extrabold">pensamento crítico, a ética e a autonomia dos estudantes</strong>.
+            Ensinar engloba alfabetizar e letrar, enquanto educar envolve formar
+            <strong class="text-escola-navy font-extrabold">cidadãos conscientes de seus direitos e deveres na sociedade.</strong>
+            Ao longo de nossa trajetória, celebramos
+            <strong class="text-escola-royal font-extrabold">troféus e o protagonismo estudantil</strong>
+            por meio de oficinas e atividades extracurriculares.
+          </p>
+
+          <div class="mt-8 flex justify-center">
+            <a
+              href="#estrutura"
+              style="background-color: #185004;"
+              class="btn-press inline-flex items-center gap-3 text-white font-bold text-base sm:text-lg px-9 py-4 r-25 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-escola-gold"
+            >
+              <span>Conheça nossa estrutura</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="acesso-rapido" style="background-color: #182E59;" class="bg-gradient-to-br from-[#182E59] via-[#1F438C] to-[#182E59] mt-10 sm:mt-12 py-10 sm:py-14 border-y border-white/15 shadow-inner">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-8">
+            <span class="inline-block bg-escola-gold text-escola-navy text-xs font-extrabold uppercase tracking-widest px-4 py-1 r-25 shadow-xs">
+              Navegação Rápida
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">
+              Acesso Rápido às Seções da Plataforma
+            </h2>
+            <p class="text-xs sm:text-sm text-white/85 mt-1.5">
+              Selecione qualquer área abaixo para navegar diretamente até as informações desejadas.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <article style="border-color: #1F438C;" class="hover-lift bg-white r-25 overflow-hidden border-[3px] shadow-xl flex flex-col justify-between">
+              <div>
+                <div style="background-color: #1F438C;" class="h-2 w-full"></div>
+                <div class="p-5 flex items-start gap-4">
+                  <div class="w-16 h-16 r-25 bg-[#EEF2FA] border-2 border-escola-royal/35 flex items-center justify-center shrink-0">
+                    <img src="Imagens/Icones/institucional-escola.png" alt="Sobre a Escola" loading="lazy" decoding="async" class="w-9 h-9 object-contain" onerror="handleIconFallback(this, 'school')" />
+                  </div>
+                  <div>
+                    <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-[#EEF2FA] text-escola-royal px-2.5 py-0.5 r-25 mb-1">
+                      Institucional
+                    </span>
+                    <h3 class="text-lg font-extrabold text-escola-navy leading-snug">Sobre a Escola</h3>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                      História, <strong class="text-escola-royal">abrangência de ensino</strong>, evolução do <strong class="text-escola-royal">IDEB</strong> e Grêmio Estudantil.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex justify-end">
+                <a href="#sobre" style="background-color: #1F438C;" class="btn-press inline-flex items-center gap-2 text-white text-xs font-extrabold uppercase tracking-wider px-5 py-2.5 r-25 shadow-sm">
+                  <span>Acessar</span>
+                  <span>›</span>
+                </a>
+              </div>
+            </article>
+
+            <article style="border-color: #AA8407;" class="hover-lift bg-white r-25 overflow-hidden border-[3px] shadow-xl flex flex-col justify-between">
+              <div>
+                <div style="background-color: #AA8407;" class="h-2 w-full"></div>
+                <div class="p-5 flex items-start gap-4">
+                  <div class="w-16 h-16 r-25 bg-[#FEF9E6] border-2 border-[#AA8407]/40 flex items-center justify-center shrink-0">
+                    <img src="Imagens/Icones/premiacoes-trofeu-medalha.png" alt="Indicadores e Troféus" loading="lazy" decoding="async" class="w-9 h-9 object-contain" onerror="handleIconFallback(this, 'trophy')" />
+                  </div>
+                  <div>
+                    <span style="color: #8A6A05;" class="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-[#FEF9E6] px-2.5 py-0.5 r-25 mb-1">
+                      Méritos
+                    </span>
+                    <h3 class="text-lg font-extrabold text-escola-navy leading-snug">Indicadores e Troféus</h3>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                      <strong style="color: #8A6A05;">IDEB escolar</strong>, galeria de <strong style="color: #8A6A05;">troféus</strong> e conquistas estudantis.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex justify-end">
+                <a href="#premiacoes" style="background-color: #AA8407;" class="btn-press inline-flex items-center gap-2 text-white text-xs font-extrabold uppercase tracking-wider px-5 py-2.5 r-25 shadow-sm">
+                  <span>Acessar</span>
+                  <span>›</span>
+                </a>
+              </div>
+            </article>
+
+            <article style="border-color: #3DADF2;" class="hover-lift bg-white r-25 overflow-hidden border-[3px] shadow-xl flex flex-col justify-between">
+              <div>
+                <div style="background-color: #3DADF2;" class="h-2 w-full"></div>
+                <div class="p-5 flex items-start gap-4">
+                  <div class="w-16 h-16 r-25 bg-[#E8F6FE] border-2 border-escola-sky/45 flex items-center justify-center shrink-0">
+                    <img src="Imagens/Icones/ensino-fundamental-2.png" alt="Modalidades de Ensino" loading="lazy" decoding="async" class="w-9 h-9 object-contain" onerror="handleIconFallback(this, 'grad')" />
+                  </div>
+                  <div>
+                    <span style="color: #167BB8;" class="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-[#E8F6FE] px-2.5 py-0.5 r-25 mb-1">
+                      Etapas & BNCC
+                    </span>
+                    <h3 class="text-lg font-extrabold text-escola-navy leading-snug">Modalidades de Ensino</h3>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                      <strong style="color: #167BB8;">Ed. Infantil 1 e 2</strong>, Fundamental I e II, EJA e <strong style="color: #167BB8;">BNCC</strong>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex justify-end">
+                <a href="#ensino" style="background-color: #3DADF2; text-shadow: 0 1px 2px rgba(24, 46, 89, 0.45);" class="btn-press inline-flex items-center gap-2 text-white text-xs font-extrabold uppercase tracking-wider px-5 py-2.5 r-25 shadow-sm">
+                  <span>Acessar</span>
+                  <span>›</span>
+                </a>
+              </div>
+            </article>
+
+            <article style="border-color: #AA8407;" class="hover-lift bg-white r-25 overflow-hidden border-[3px] shadow-xl flex flex-col justify-between">
+              <div>
+                <div style="background-color: #AA8407;" class="h-2 w-full"></div>
+                <div class="p-5 flex items-start gap-4">
+                  <div class="w-16 h-16 r-25 bg-[#FDF8E6] border-2 border-[#AA8407]/45 flex items-center justify-center shrink-0">
+                    <img src="Imagens/Icones/ee-acolhimento-inclusao.png" alt="Atendimento Especializado AEE" loading="lazy" decoding="async" class="w-9 h-9 object-contain" onerror="handleIconFallback(this, 'heart')" />
+                  </div>
+                  <div>
+                    <span style="color: #8A6A05;" class="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-[#FDF8E6] px-2.5 py-0.5 r-25 mb-1">
+                      Inclusão
+                    </span>
+                    <h3 class="text-lg font-extrabold text-escola-navy leading-snug">Atendimento (AEE)</h3>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                      <strong style="color: #8A6A05;">Cuidadores em sala</strong>, material adaptado e <strong style="color: #8A6A05;">acessibilidade</strong>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex justify-end">
+                <a href="#aee" style="background-color: #AA8407;" class="btn-press inline-flex items-center gap-2 text-white text-xs font-extrabold uppercase tracking-wider px-5 py-2.5 r-25 shadow-sm">
+                  <span>Acessar</span>
+                  <span>›</span>
+                </a>
+              </div>
+            </article>
+
+            <article style="border-color: #185004;" class="hover-lift bg-white r-25 overflow-hidden border-[3px] shadow-xl flex flex-col justify-between">
+              <div>
+                <div style="background-color: #185004;" class="h-2 w-full"></div>
+                <div class="p-5 flex items-start gap-4">
+                  <div class="w-16 h-16 r-25 bg-[#EEF7EB] border-2 border-escola-green/35 flex items-center justify-center shrink-0">
+                    <img src="Imagens/Icones/estrutura-robotica.png" alt="Estrutura e Oficinas" loading="lazy" decoding="async" class="w-9 h-9 object-contain" onerror="handleIconFallback(this, 'robot')" />
+                  </div>
+                  <div>
+                    <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-[#EEF7EB] text-escola-green px-2.5 py-0.5 r-25 mb-1">
+                      Ambientes
+                    </span>
+                    <h3 class="text-lg font-extrabold text-escola-navy leading-snug">Estrutura e Oficinas</h3>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                      <strong class="text-escola-green">Informática, robótica</strong>, ciências, <strong class="text-escola-green">biblioteca</strong> e esportes.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex justify-end">
+                <a href="#estrutura" style="background-color: #185004;" class="btn-press inline-flex items-center gap-2 text-white text-xs font-extrabold uppercase tracking-wider px-5 py-2.5 r-25 shadow-sm">
+                  <span>Acessar</span>
+                  <span>›</span>
+                </a>
+              </div>
+            </article>
+
+            <article style="border-color: #BA630D;" class="hover-lift bg-white r-25 overflow-hidden border-[3px] shadow-xl flex flex-col justify-between">
+              <div>
+                <div style="background-color: #BA630D;" class="h-2 w-full"></div>
+                <div class="p-5 flex items-start gap-4">
+                  <div class="w-16 h-16 r-25 bg-[#FDF4EC] border-2 border-[#BA630D]/40 flex items-center justify-center shrink-0">
+                    <img src="Imagens/Icones/mapa-localizacao.png" alt="Endereço, Contato e Dúvidas" loading="lazy" decoding="async" class="w-9 h-9 object-contain" onerror="handleIconFallback(this, 'pin')" />
+                  </div>
+                  <div>
+                    <span style="color: #BA630D;" class="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-[#FDF4EC] px-2.5 py-0.5 r-25 mb-1">
+                      Atendimento
+                    </span>
+                    <h3 class="text-lg font-extrabold text-escola-navy leading-snug">Endereço e Contato</h3>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                      <strong style="color: #BA630D;">Sede Principal e Anexo</strong>, WhatsApp e <strong style="color: #BA630D;">dúvidas frequentes</strong>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex justify-end">
+                <a href="#contato" style="background-color: #BA630D;" class="btn-press inline-flex items-center gap-2 text-white text-xs font-extrabold uppercase tracking-wider px-5 py-2.5 r-25 shadow-sm">
+                  <span>Acessar</span>
+                  <span>›</span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" data-section="sobre" class="bg-gradient-to-b from-[#F4F7FC] via-[#FFFFFF] to-[#EDF3FA] py-8 sm:py-11">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="bg-escola-navy text-white r-25 p-6 sm:p-8 shadow-md mb-6">
+          <span class="inline-block bg-escola-gold text-escola-navy text-xs font-extrabold uppercase tracking-wider px-3.5 py-1 r-25 mb-2">
+            Nossa História e Identidade
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+            Sobre a Escola Municipal 31 de Março
+          </h2>
+          <p class="mt-2 text-white/80 text-sm sm:text-base max-w-3xl">
+            Compromisso histórico com a comunidade de Arapiraca, unindo acolhimento humano, excelência acadêmica e inovação tecnológica.
+          </p>
+        </div>
+
+        <div class="bg-white r-25 p-5 sm:p-7 border-2 border-escola-royal/15 shadow-xs mb-6">
+          <p class="abnt-justify text-base sm:text-lg text-slate-700 leading-relaxed">
+            Fundada há mais de três décadas para atender às famílias do bairro Brasília e regiões vizinhas, a
+            <strong class="text-escola-navy font-extrabold">Escola Municipal 31 de Março</strong> fornece educação pública de qualidade e transformação social. Nosso objetivo acadêmico é promover uma formação integral que alia base curricular sólida, inclusão e tecnologia, oferecendo ambientes modernos de
+            <strong style="color: #6F3A06;" class="font-extrabold">informática, robótica, ciências, atividade física, futebol, dança e leitura</strong>.
+            Atualmente, nossa abrangência de ensino contempla desde a
+            <strong style="color: #6F3A06;" class="font-extrabold">Educação Infantil 1 e 2, o Ensino Fundamental 1 e 2, até a Educação de Jovens e Adultos (EJA)</strong>,
+            celebrando conquistas expressivas no IDEB e premiações em troféus estudantis.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div class="hover-lift bg-white r-25 p-6 border-2 border-[#6F3A06]/25 shadow-sm">
+            <div class="flex items-center gap-3.5 mb-4">
+              <div class="w-12 h-12 r-25 bg-[#6F3A06]/10 flex items-center justify-center shrink-0">
+                <img src="Imagens/Icones/institucional-escola.png" alt="Abrangência de Ensino" loading="lazy" decoding="async" class="w-7 h-7 object-contain" onerror="handleIconFallback(this, 'school')" />
+              </div>
+              <div>
+                <span class="text-xs font-extrabold uppercase tracking-wider" style="color: #6F3A06;">Etapas Atendidas</span>
+                <h3 class="text-xl font-extrabold text-escola-navy">Abrangência de Ensino</h3>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2.5 mt-3">
+              <span style="background-color: #6F3A06;" class="text-white text-xs sm:text-sm font-bold px-4 py-2 r-25 inline-flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-escola-gold"></span> Educação Infantil 1 e 2
+              </span>
+              <span style="background-color: #6F3A06;" class="text-white text-xs sm:text-sm font-bold px-4 py-2 r-25 inline-flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-escola-gold"></span> Ensino Fundamental 1
+              </span>
+              <span style="background-color: #6F3A06;" class="text-white text-xs sm:text-sm font-bold px-4 py-2 r-25 inline-flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-escola-gold"></span> Ensino Fundamental 2
+              </span>
+              <span style="background-color: #6F3A06;" class="text-white text-xs sm:text-sm font-bold px-4 py-2 r-25 inline-flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-escola-gold"></span> EJA (Jovens e Adultos)
+              </span>
+            </div>
+          </div>
+
+          <div class="hover-lift bg-white r-25 p-6 border-2 border-escola-royal/25 shadow-sm">
+            <div class="flex items-center gap-3.5 mb-4">
+              <div class="w-12 h-12 r-25 bg-escola-royal/10 flex items-center justify-center shrink-0">
+                <img src="Imagens/Icones/estrutura-robotica.png" alt="Resumo da Estrutura" loading="lazy" decoding="async" class="w-7 h-7 object-contain" onerror="handleIconFallback(this, 'robot')" />
+              </div>
+              <div>
+                <span class="text-xs font-extrabold uppercase tracking-wider text-escola-royal">Ambientes de Aprendizagem</span>
+                <h3 class="text-xl font-extrabold text-escola-navy">Resumo da Estrutura</h3>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs sm:text-sm font-bold text-escola-navy">
+              <div class="bg-[#EEF2FA] px-3 py-2 r-25 flex items-center gap-2">
+                <img src="Imagens/Icones/icone-check-lista.png" alt="" loading="lazy" decoding="async" class="w-4 h-4 object-contain" style="filter: brightness(0) saturate(100%) invert(18%) sepia(68%) saturate(2250%) hue-rotate(211deg) brightness(89%) contrast(96%);" onerror="handleIconFallback(this, 'checkRoyal')" /> Informática
+              </div>
+              <div class="bg-[#EEF2FA] px-3 py-2 r-25 flex items-center gap-2">
+                <img src="Imagens/Icones/icone-check-lista.png" alt="" loading="lazy" decoding="async" class="w-4 h-4 object-contain" style="filter: brightness(0) saturate(100%) invert(18%) sepia(68%) saturate(2250%) hue-rotate(211deg) brightness(89%) contrast(96%);" onerror="handleIconFallback(this, 'checkRoyal')" /> Robótica
+              </div>
+              <div class="bg-[#EEF2FA] px-3 py-2 r-25 flex items-center gap-2">
+                <img src="Imagens/Icones/icone-check-lista.png" alt="" loading="lazy" decoding="async" class="w-4 h-4 object-contain" style="filter: brightness(0) saturate(100%) invert(18%) sepia(68%) saturate(2250%) hue-rotate(211deg) brightness(89%) contrast(96%);" onerror="handleIconFallback(this, 'checkRoyal')" /> Ciências
+              </div>
+              <div class="bg-[#EEF2FA] px-3 py-2 r-25 flex items-center gap-2">
+                <img src="Imagens/Icones/icone-check-lista.png" alt="" loading="lazy" decoding="async" class="w-4 h-4 object-contain" style="filter: brightness(0) saturate(100%) invert(18%) sepia(68%) saturate(2250%) hue-rotate(211deg) brightness(89%) contrast(96%);" onerror="handleIconFallback(this, 'checkRoyal')" /> Ativ. Física
+              </div>
+              <div class="bg-[#EEF2FA] px-3 py-2 r-25 flex items-center gap-2">
+                <img src="Imagens/Icones/icone-check-lista.png" alt="" loading="lazy" decoding="async" class="w-4 h-4 object-contain" style="filter: brightness(0) saturate(100%) invert(18%) sepia(68%) saturate(2250%) hue-rotate(211deg) brightness(89%) contrast(96%);" onerror="handleIconFallback(this, 'checkRoyal')" /> Futebol
+              </div>
+              <div class="bg-[#EEF2FA] px-3 py-2 r-25 flex items-center gap-2">
+                <img src="Imagens/Icones/icone-check-lista.png" alt="" loading="lazy" decoding="async" class="w-4 h-4 object-contain" style="filter: brightness(0) saturate(100%) invert(18%) sepia(68%) saturate(2250%) hue-rotate(211deg) brightness(89%) contrast(96%);" onerror="handleIconFallback(this, 'checkRoyal')" /> Dança & Leitura
+              </div>
+            </div>
+          </div>
+
+          <div class="hover-lift bg-white r-25 p-6 border-2 border-escola-amber/30 shadow-sm">
+            <div class="flex items-center gap-3.5 mb-3">
+              <div class="w-12 h-12 r-25 bg-escola-amber/15 flex items-center justify-center shrink-0">
+                <img src="Imagens/Icones/premiacoes-trofeu-medalha.png" alt="Melhoria Contínua do IDEB" loading="lazy" decoding="async" class="w-7 h-7 object-contain" onerror="handleIconFallback(this, 'trophy')" />
+              </div>
+              <div>
+                <span class="text-xs font-extrabold uppercase tracking-wider text-escola-amber">Melhoria Contínua</span>
+                <h3 class="text-xl font-extrabold text-escola-navy">Evolução do IDEB e Qualidade de Ensino</h3>
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Alcançamos avanços constantes no <strong class="text-escola-navy">IDEB</strong> (<strong style="color: #6F3A06;">I</strong> – Índice, <strong style="color: #6F3A06;">D</strong> – de Desenvolvimento, <strong style="color: #6F3A06;">E</strong> – da Educação, <strong style="color: #6F3A06;">B</strong> – Básica), impulsionados pela <strong class="text-escola-navy">melhoria contínua do ensino</strong> em sala de aula, acompanhamento pedagógico individualizado e fortalecimento das <strong class="text-escola-navy">atividades extracurriculares</strong> de esporte, arte e tecnologia.
+            </p>
+          </div>
+
+          <div class="hover-lift bg-white r-25 p-6 border-2 border-escola-sky/35 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3.5 mb-3">
+                <div class="w-12 h-12 r-25 bg-escola-sky/15 flex items-center justify-center shrink-0">
+                  <img src="Imagens/Icones/gremio-estudantil.png" alt="Grêmio Estudantil" loading="lazy" decoding="async" class="w-7 h-7 object-contain" onerror="handleIconFallback(this, 'studyGroup')" />
+                </div>
+                <div>
+                  <span style="color: #167BB8;" class="text-xs font-extrabold uppercase tracking-wider">Protagonismo & Cidadania</span>
+                  <h3 class="text-xl font-extrabold text-escola-navy">Grêmio Estudantil</h3>
+                </div>
+              </div>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Espaço democrático de representação estudantil, onde os alunos exercem a <strong class="text-escola-navy">liderança, o diálogo e a participação ativa</strong> na rotina escolar, propondo melhorias, ações culturais, esportivas e iniciativas de cidadania junto à equipe gestora.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap gap-2">
+              <span class="bg-escola-skySoft text-escola-navy text-xs font-bold px-3 py-1 r-25">Liderança Juvenil</span>
+              <span class="bg-escola-skySoft text-escola-navy text-xs font-bold px-3 py-1 r-25">Participação Democrática</span>
+              <span class="bg-escola-skySoft text-escola-navy text-xs font-bold px-3 py-1 r-25">Ações Culturais</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="galeria-fotos" data-section="sobre" class="bg-gradient-to-b from-[#E3EEFA] via-[#EDF4FC] to-[#E3EEFA] bg-pattern-dots py-10 sm:py-14 border-t border-escola-royal/15 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center max-w-2xl mx-auto mb-7 sm:mb-10">
+          <span class="inline-block bg-escola-navy/10 text-escola-navy text-xs font-extrabold uppercase tracking-widest px-4 py-1 r-25 mb-2">
+            Vivências em Sala e Laboratórios
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-escola-navy tracking-tight">
+            Galeria de fotos:
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1.5">
+            Utilize as setas laterais, deslize ou clique nas imagens ao lado para explorar as atividades realizadas pelos nossos estudantes.
+          </p>
+        </div>
+
+        <div class="relative flex items-center justify-center gap-3 md:gap-4 lg:gap-6 w-full">
+
+          <button
+            type="button"
+            onclick="changePhotoGallery(-1)"
+            aria-label="Foto anterior"
+            class="btn-press hidden md:flex z-20 w-12 h-12 lg:w-14 lg:h-14 r-25 bg-escola-navy hover:bg-escola-royal text-white items-center justify-center shadow-lg shrink-0 focus:outline-none focus:ring-4 focus:ring-escola-gold"
+          >
+            <svg class="w-6 h-6 lg:w-7 lg:h-7" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+
+          <div
+            id="gallery-left-card"
+            onclick="changePhotoGallery(-1)"
+            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();changePhotoGallery(-1);}"
+            role="button"
+            tabindex="0"
+            aria-label="Ver foto anterior"
+            style="border-color: #AA8407;"
+            class="hidden md:block flex-1 max-w-[200px] lg:max-w-[250px] h-56 lg:h-72 r-25 overflow-hidden border-[4px] shadow-md cursor-pointer opacity-85 hover:opacity-100 hover:scale-[0.98] scale-95 transition-all duration-300 bg-slate-200 relative group"
+          >
+            <img
+              id="gallery-left-img"
+              src="Imagens/AtividadesEstudantis/programacao-setas-anos-iniciais.jpeg"
+              alt="Foto anterior da galeria"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              onerror="handlePhotoFallback(this, 'Lógica e Algoritmos', '#AA8407')"
+            />
+            <div class="absolute inset-0 bg-escola-navy/25 group-hover:bg-escola-navy/10 transition flex items-center justify-center">
+              <span class="opacity-0 group-hover:opacity-100 transition bg-escola-navy/90 text-white text-xs font-extrabold px-3 py-1.5 r-25 shadow-md">
+                ‹ Anterior
+              </span>
+            </div>
+          </div>
+
+          <div
+            id="gallery-center-card"
+            style="border-color: #3DADF2;"
+            class="w-full md:flex-[1.8] max-w-xl aspect-[4/3] sm:aspect-[16/10] md:aspect-auto md:h-80 lg:h-96 r-25 overflow-hidden border-[4px] sm:border-[5px] shadow-2xl transition-all duration-300 bg-slate-900 relative"
+          >
+            <img
+              id="gallery-center-img"
+              src="Imagens/AtividadesEstudantis/aula-leitura-digitacao.jpg"
+              alt="Leitura Interpretativa e Digitação"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-full object-cover transition-all duration-300"
+              onerror="handlePhotoFallback(this, 'Leitura Interpretativa e Digitação', '#3DADF2')"
+            />
+            <span
+              id="gallery-counter-badge"
+              style="background-color: #3DADF2;"
+              class="absolute top-3.5 right-3.5 text-white text-xs font-extrabold px-3.5 py-1 r-25 shadow-md"
+            >
+              1 / 10
+            </span>
+          </div>
+
+          <div
+            id="gallery-right-card"
+            onclick="changePhotoGallery(1)"
+            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();changePhotoGallery(1);}"
+            role="button"
+            tabindex="0"
+            aria-label="Ver próxima foto"
+            style="border-color: #AA8407;"
+            class="hidden md:block flex-1 max-w-[200px] lg:max-w-[250px] h-56 lg:h-72 r-25 overflow-hidden border-[4px] shadow-md cursor-pointer opacity-85 hover:opacity-100 hover:scale-[0.98] scale-95 transition-all duration-300 bg-slate-200 relative group"
+          >
+            <img
+              id="gallery-right-img"
+              src="Imagens/AtividadesEstudantis/oficina-robotica-circuitos.jpeg"
+              alt="Próxima foto da galeria"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              onerror="handlePhotoFallback(this, 'Oficina de Robótica', '#AA8407')"
+            />
+            <div class="absolute inset-0 bg-escola-navy/25 group-hover:bg-escola-navy/10 transition flex items-center justify-center">
+              <span class="opacity-0 group-hover:opacity-100 transition bg-escola-navy/90 text-white text-xs font-extrabold px-3 py-1.5 r-25 shadow-md">
+                Próxima ›
+              </span>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onclick="changePhotoGallery(1)"
+            aria-label="Próxima foto"
+            class="btn-press hidden md:flex z-20 w-12 h-12 lg:w-14 lg:h-14 r-25 bg-escola-navy hover:bg-escola-royal text-white items-center justify-center shadow-lg shrink-0 focus:outline-none focus:ring-4 focus:ring-escola-gold"
+          >
+            <svg class="w-6 h-6 lg:w-7 lg:h-7" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+
+        </div>
+
+        <div class="flex md:hidden items-center justify-center gap-3 mt-4">
+          <button
+            type="button"
+            onclick="changePhotoGallery(-1)"
+            aria-label="Foto anterior"
+            class="btn-press flex-1 max-w-[160px] min-h-[44px] px-4 py-2.5 r-25 bg-escola-navy hover:bg-escola-royal text-white text-xs font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 shadow-md"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            <span>Anterior</span>
+          </button>
+
+          <button
+            type="button"
+            onclick="changePhotoGallery(1)"
+            aria-label="Próxima foto"
+            class="btn-press flex-1 max-w-[160px] min-h-[44px] px-4 py-2.5 r-25 bg-escola-navy hover:bg-escola-royal text-white text-xs font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 shadow-md"
+          >
+            <span>Próxima</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="max-w-xl mx-auto text-center mt-5 sm:mt-6 px-2">
+          <h3
+            id="gallery-title"
+            style="color: #167BB8;"
+            class="text-xl sm:text-2xl font-extrabold tracking-tight transition-colors duration-300"
+          >
+            Leitura Interpretativa e Digitação
+          </h3>
+          <p
+            id="gallery-desc"
+            class="text-sm sm:text-base text-slate-700 mt-2 leading-relaxed"
+          >
+            Estudantes exercitam a <strong style="color: #167BB8;">compreensão textual e a escrita digital</strong> respondendo a atividades interativas de interpretação de fábulas no laboratório.
+          </p>
+
+          <div id="gallery-dots" class="flex items-center justify-center gap-2 mt-5" aria-label="Selecionar foto da galeria"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="premiacoes" data-section="sobre" class="bg-gradient-to-br from-[#122244] via-escola-navy to-[#1B3870] text-white py-8 sm:py-11">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="inline-block bg-escola-gold text-escola-navy text-xs font-extrabold uppercase tracking-wider px-4 py-1 r-25 mb-2">
+            Resultados & Reconhecimento
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold">Indicadores e Premiações</h2>
+          <p class="text-white/80 text-sm sm:text-base mt-2">
+            Acompanhe nosso desempenho educacional, nossa sala de troféus e as oficinas que transformam o dia a dia escolar.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <article class="hover-lift bg-white/5 border border-white/10 p-5 r-25 flex flex-col justify-between">
+            <div>
+              <div class="w-full h-44 r-25 bg-escola-sky flex flex-col items-center justify-center p-6 text-escola-navy shadow-inner mb-5">
+                <span class="text-5xl font-black tracking-tighter">IDEB</span>
+                <span class="text-xs font-extrabold uppercase tracking-widest mt-1 bg-white/60 px-3 py-0.5 r-25">Avaliação Nacional</span>
+              </div>
+              <h3 class="text-xl font-extrabold text-center uppercase tracking-wide mb-3">IDEB Escolar</h3>
+              <p class="text-sm text-white/90 leading-relaxed mb-5">
+                O <strong class="text-escola-sky">Índice de Desenvolvimento da Educação Básica (IDEB)</strong> foi criado em 2007 e reúne informações sobre o fluxo escolar e o desempenho dos estudantes nas avaliações educacionais.
+              </p>
+            </div>
+            <a
+              href="https://qedu.org.br/escola/27017311-escola-de-ensino-fundamental-31-de-marco"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="text-shadow: 0 1px 2px rgba(24, 46, 89, 0.45);"
+              class="btn-press block w-full text-center bg-escola-sky text-white font-extrabold uppercase tracking-wider py-3.5 r-25 shadow-md"
+            >
+              CONFIRA AQUI
+            </a>
+          </article>
+
+          <article class="hover-lift bg-white/5 border border-white/10 p-5 r-25 flex flex-col justify-between">
+            <div>
+              <div style="background-color: #AA8407;" class="w-full h-44 r-25 flex flex-col items-center justify-center p-6 text-white shadow-inner mb-5">
+                <img src="Imagens/Icones/premiacoes-trofeu-medalha.png" alt="Troféus" loading="lazy" decoding="async" class="w-16 h-16 object-contain mb-2" onerror="handleIconFallback(this, 'trophy')" />
+                <span class="text-xs font-extrabold uppercase tracking-widest bg-black/25 px-3 py-0.5 r-25">4 Conquistas em Destaque</span>
+              </div>
+              <h3 class="text-xl font-extrabold text-center uppercase tracking-wide mb-3">Galeria de Troféus</h3>
+              <p class="text-sm text-white/90 leading-relaxed mb-5">
+                A nossa galeria de troféus ganhou novos símbolos de vitória e orgulho.
+                <strong style="color: #AA8407; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.85);" class="font-extrabold">Cada conquista celebra a dedicação, o esforço em equipe</strong>
+                e a busca constante por excelência nesta escola!
+              </p>
+            </div>
+            <button
+              type="button"
+              onclick="openTrophyModal()"
+              style="background-color: #AA8407;"
+              class="btn-press w-full text-center text-white font-extrabold uppercase tracking-wider py-3.5 r-25 shadow-md"
+            >
+              ACESSE AQUI
+            </button>
+          </article>
+
+          <article class="hover-lift bg-white/5 border border-white/10 p-5 r-25 flex flex-col justify-between">
+            <div>
+              <div style="background-color: #BA630D;" class="w-full h-44 r-25 flex flex-col items-center justify-center p-6 text-white shadow-inner mb-5">
+                <img src="Imagens/Icones/extra-esportes.png" alt="Atividades Extracurriculares" loading="lazy" decoding="async" class="w-14 h-14 object-contain invert mb-2" onerror="handleIconFallback(this, 'sports')" />
+                <span class="text-xs font-extrabold uppercase tracking-widest bg-black/25 px-3 py-0.5 r-25">Esporte, Arte & Cultura</span>
+              </div>
+              <h3 class="text-xl font-extrabold text-center uppercase tracking-wide mb-3">Atividades Extracurriculares</h3>
+              <p class="text-sm text-white/90 leading-relaxed mb-5">
+                Nossas oficinas abrem portas para o futuro.
+                <strong style="color: #BA630D; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.85);" class="font-extrabold">Com informática, robótica e educação física,</strong>
+                estimulamos a criatividade e a saúde para o desenvolvimento integral de cada aluno!
+              </p>
+            </div>
+            <a
+              href="#extracurricular"
+              style="background-color: #BA630D;"
+              class="btn-press block w-full text-center text-white font-extrabold uppercase tracking-wider py-3.5 r-25 shadow-md"
+            >
+              SAIBA MAIS
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="ensino" data-section="ensino" class="bg-gradient-to-b from-[#EEF4FB] via-[#F4F7FC] to-[#E7F0FA] py-8 sm:py-11">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center max-w-3xl mx-auto mb-8">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-escola-royal">Estrutura Curricular & BNCC</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-escola-navy mt-1">Modalidades de Ensino</h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2">
+            Escolha abaixo a etapa de ensino desejada para conhecer a base comum curricular (BNCC), faixas etárias, turnos e nossos diferenciais pedagógicos.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+
+          <article id="card-infantil" class="hover-lift bg-white r-25 overflow-hidden shadow-sm border border-slate-200/80 flex flex-col justify-between">
+            <div>
+              <div class="relative h-44 bg-escola-sky/20 overflow-hidden">
+                <img
+                  src="Imagens/ImagensCapas/EDINFANTIL/edinfantil.jpg"
+                  alt="Turma da Educação Infantil 1 e 2"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover"
+                  onerror="handlePhotoFallback(this, 'Educação Infantil 1 e 2', '#3DADF2')"
+                />
+                <div class="h-1.5 w-full bg-escola-sky absolute top-0 left-0"></div>
+              </div>
+
+              <div class="p-6">
+                <div class="w-12 h-12 r-25 bg-escola-sky/15 flex items-center justify-center mb-4 -mt-11 relative z-10 border-4 border-white shadow-sm">
+                  <img src="Imagens/Icones/ensino-educacao-infantil.png" alt="Ícone Educação Infantil" loading="lazy" decoding="async" class="w-6 h-6 object-contain" onerror="handleIconFallback(this, 'kids')" />
+                </div>
+
+                <h3 class="text-xl font-extrabold text-escola-navy">Educação Infantil 1 e 2</h3>
+                <div class="mt-2 space-y-1">
+                  <span class="inline-block bg-escola-sky/15 text-escola-navy text-xs font-bold px-3 py-1 r-25">
+                    Idade: 4 e 5 anos (Pré-escola)
+                  </span>
+                  <span class="inline-block bg-escola-ice text-slate-700 text-xs font-bold px-3 py-1 r-25">
+                    Turnos: Matutino e Vespertino (Anexo)
+                  </span>
+                </div>
+
+                <p class="text-sm text-slate-600 leading-relaxed mt-3">
+                  Primeira etapa da Educação Básica, unindo <strong class="text-escola-navy">educar e cuidar</strong> por meio de <strong class="text-escola-navy">interações e brincadeiras</strong> que estimulam a oralidade, autonomia e descoberta do mundo.
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6">
+              <button
+                type="button"
+                onclick="openModalityModal('infantil')"
+                style="background-color: #3DADF2; text-shadow: 0 1px 2px rgba(24, 46, 89, 0.45);"
+                class="btn-press w-full text-white font-extrabold text-sm py-3.5 r-25 shadow-sm"
+              >
+                + Ver Mais Detalhes
+              </button>
+            </div>
+          </article>
+
+          <article id="card-fund1" class="hover-lift bg-white r-25 overflow-hidden shadow-sm border border-slate-200/80 flex flex-col justify-between">
+            <div>
+              <div class="relative h-44 bg-escola-amber/20 overflow-hidden">
+                <img
+                  src="Imagens/ImagensCapas/EDFUND1/edfund1.jpg"
+                  alt="Turma do Ensino Fundamental 1"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover"
+                  onerror="handlePhotoFallback(this, 'Ensino Fundamental I', '#A67208')"
+                />
+                <div class="h-1.5 w-full bg-escola-amber absolute top-0 left-0"></div>
+              </div>
+
+              <div class="p-6">
+                <div class="w-12 h-12 r-25 bg-escola-amber/15 flex items-center justify-center mb-4 -mt-11 relative z-10 border-4 border-white shadow-sm">
+                  <img src="Imagens/Icones/ensino-fundamental-1.png" alt="Ícone Fundamental 1" loading="lazy" decoding="async" class="w-6 h-6 object-contain" onerror="handleIconFallback(this, 'book')" />
+                </div>
+
+                <h3 class="text-xl font-extrabold text-escola-navy">Ensino Fund. I</h3>
+                <div class="mt-2">
+                  <span class="inline-block bg-escola-amber/15 text-escola-amber text-xs font-bold px-3 py-1 r-25">
+                    1º ao 5º ano | Turno: Vespertino
+                  </span>
+                </div>
+
+                <p class="text-sm text-slate-600 leading-relaxed mt-3">
+                  Foco na <strong class="text-escola-navy">alfabetização, letramento</strong> e introdução ao <strong class="text-escola-navy">raciocínio lógico e computacional</strong>. Utilizamos abordagens lúdicas para despertar a curiosidade científica.
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6">
+              <button
+                type="button"
+                onclick="openModalityModal('fund1')"
+                style="background-color: #A67208;"
+                class="btn-press w-full text-white font-extrabold text-sm py-3.5 r-25 shadow-sm"
+              >
+                + Ver Mais Detalhes
+              </button>
+            </div>
+          </article>
+
+          <article id="card-fund2" class="hover-lift bg-white r-25 overflow-hidden shadow-sm border border-slate-200/80 flex flex-col justify-between">
+            <div>
+              <div class="relative h-44 bg-escola-royal/20 overflow-hidden">
+                <img
+                  src="Imagens/ImagensCapas/EDFUND2/edfund2.jpg"
+                  alt="Turma do Ensino Fundamental 2"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover"
+                  onerror="handlePhotoFallback(this, 'Ensino Fundamental II', '#1F438C')"
+                />
+                <div class="h-1.5 w-full bg-escola-royal absolute top-0 left-0"></div>
+              </div>
+
+              <div class="p-6">
+                <div class="w-12 h-12 r-25 bg-escola-royal/15 flex items-center justify-center mb-4 -mt-11 relative z-10 border-4 border-white shadow-sm">
+                  <img src="Imagens/Icones/ensino-fundamental-2.png" alt="Ícone Fundamental 2" loading="lazy" decoding="async" class="w-6 h-6 object-contain" onerror="handleIconFallback(this, 'grad')" />
+                </div>
+
+                <h3 class="text-xl font-extrabold text-escola-navy">Ensino Fund. II</h3>
+                <div class="mt-2">
+                  <span class="inline-block bg-escola-royal/15 text-escola-royal text-xs font-bold px-3 py-1 r-25">
+                    6º ao 9º ano | Turno: Matutino
+                  </span>
+                </div>
+
+                <p class="text-sm text-slate-600 leading-relaxed mt-3">
+                  Aprofundamento dos conhecimentos acadêmicos. Incentivamos a <strong class="text-escola-navy">autonomia, o pensamento crítico, a prática esportiva</strong> e o <strong class="text-escola-navy">protagonismo juvenil</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6">
+              <button
+                type="button"
+                onclick="openModalityModal('fund2')"
+                style="background-color: #1F438C;"
+                class="btn-press w-full text-white font-extrabold text-sm py-3.5 r-25 shadow-sm"
+              >
+                + Ver Mais Detalhes
+              </button>
+            </div>
+          </article>
+
+          <article id="card-eja" class="hover-lift bg-white r-25 overflow-hidden shadow-sm border border-slate-200/80 flex flex-col justify-between">
+            <div>
+              <div class="relative h-44 bg-escola-green/20 overflow-hidden">
+                <img
+                  src="Imagens/ImagensCapas/EDEJA/edeja.jpg"
+                  alt="Turma da Educação de Jovens e Adultos - EJA"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover"
+                  onerror="handlePhotoFallback(this, 'Educação de Jovens e Adultos (EJA)', '#185004')"
+                />
+                <div class="h-1.5 w-full bg-escola-green absolute top-0 left-0"></div>
+              </div>
+
+              <div class="p-6">
+                <div class="w-12 h-12 r-25 bg-escola-green/15 flex items-center justify-center mb-4 -mt-11 relative z-10 border-4 border-white shadow-sm">
+                  <img src="Imagens/Icones/ensino-eja-jovens-adultos.png" alt="Ícone EJA" loading="lazy" decoding="async" class="w-6 h-6 object-contain" onerror="handleIconFallback(this, 'group')" />
+                </div>
+
+                <h3 class="text-xl font-extrabold text-escola-navy">EJA</h3>
+                <div class="mt-2">
+                  <span class="inline-block bg-escola-green/15 text-escola-green text-xs font-bold px-3 py-1 r-25">
+                    Educação de Jovens e Adultos | Turno: Noturno
+                  </span>
+                </div>
+
+                <p class="text-sm text-slate-600 leading-relaxed mt-3">
+                  Uma nova oportunidade para brilhar. Currículo contextualizado com a realidade do trabalhador, focado em <strong class="text-escola-navy">respeito, letramento digital</strong> e <strong class="text-escola-navy">inclusão no mercado</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6">
+              <button
+                type="button"
+                onclick="openModalityModal('eja')"
+                style="background-color: #185004;"
+                class="btn-press w-full text-white font-extrabold text-sm py-3.5 r-25 shadow-sm"
+              >
+                + Ver Mais Detalhes
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="bg-white r-25 p-6 sm:p-8 shadow-sm border border-slate-200/80">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+            <div>
+              <span class="inline-block bg-escola-royal/10 text-escola-royal text-xs font-extrabold uppercase tracking-wider px-3.5 py-1 r-25 mb-2">
+                Matriz Curricular Alinhada ao MEC
+              </span>
+              <h3 class="text-xl sm:text-2xl font-extrabold text-escola-navy">
+                BNCC Tradicional & BNCC da Computação e Robótica
+              </h3>
+              <p class="text-sm text-slate-600 mt-1">
+                Explore como aplicamos as diretrizes nacionais desde a Educação Infantil até o 9º ano do Ensino Fundamental.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2" role="tablist" aria-label="Eixos da BNCC">
+              <button type="button" onclick="switchBnccTab('computacao-iniciais', this)" class="bncc-tab active bg-escola-navy text-white text-xs font-bold px-4 py-2.5 r-25 transition">
+                Computação (1º ao 5º Ano)
+              </button>
+              <button type="button" onclick="switchBnccTab('computacao-finais', this)" class="bncc-tab bg-escola-ice text-slate-700 text-xs font-bold px-4 py-2.5 r-25 transition">
+                Computação (6º ao 9º Ano)
+              </button>
+              <button type="button" onclick="switchBnccTab('bncc-geral', this)" class="bncc-tab bg-escola-ice text-slate-700 text-xs font-bold px-4 py-2.5 r-25 transition">
+                BNCC Infantil, Fund. & EJA
+              </button>
+            </div>
+          </div>
+
+          <div id="bncc-computacao-iniciais" class="bncc-panel mt-6 grid grid-cols-1 md:grid-cols-3 gap-5 fade-slide">
+            <div class="bg-[#EEF2FA] p-5 r-25 border-2 border-escola-royal/30 shadow-xs">
+              <div class="flex items-center gap-2.5 mb-3.5 pb-2.5 border-b border-escola-royal/20">
+                <span class="w-9 h-9 r-25 bg-escola-royal text-white flex items-center justify-center font-extrabold text-sm shrink-0">1</span>
+                <h4 class="font-extrabold text-escola-royal text-base">Pensamento Computacional</h4>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-royal mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-royal font-extrabold">Algoritmos e Padrões (1º–2º ano):</strong> Organização de objetos e sequências de passos lógicos (EF01C001, EF02C002).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-royal mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-royal font-extrabold">Decomposição e Lógica (3º–5º ano):</strong> Divisão de problemas em etapas, sentenças Verdadeiro/Falso e condicionais (EF03C003, EF05C003).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-royal mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-royal font-extrabold">Matrizes e Listas:</strong> Jogos de tabuleiro e grafos simples aplicados à robótica educacional (EF04C001, EF05C002).</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-[#EEF7FE] p-5 r-25 border-2 border-escola-sky/45 shadow-xs">
+              <div class="flex items-center gap-2.5 mb-3.5 pb-2.5 border-b border-escola-sky/30">
+                <span class="w-9 h-9 r-25 bg-escola-sky text-escola-navy flex items-center justify-center font-extrabold text-sm shrink-0">2</span>
+                <h4 style="color: #167BB8;" class="font-extrabold text-base">Mundo Digital</h4>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-sky mt-1.5 shrink-0"></span>
+                  <span><strong style="color: #167BB8;" class="font-extrabold">Hardware e Software (2º–3º ano):</strong> Identificação de dispositivos de entrada/saída e programas (EF02C004, EF03C006).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-sky mt-1.5 shrink-0"></span>
+                  <span><strong style="color: #167BB8;" class="font-extrabold">Codificação Binária e Pixels (4º ano):</strong> Representação de dados, sistema binário (0 e 1) e matrizes RGB (EF04C004, EF04C005).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-sky mt-1.5 shrink-0"></span>
+                  <span><strong style="color: #167BB8;" class="font-extrabold">Arquitetura e Nuvem (5º ano):</strong> Processadores, sistemas operacionais e armazenamento local vs. remoto (EF05C005, EF05C006).</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-[#FDF8EE] p-5 r-25 border-2 border-escola-amber/35 shadow-xs">
+              <div class="flex items-center gap-2.5 mb-3.5 pb-2.5 border-b border-escola-amber/25">
+                <span class="w-9 h-9 r-25 bg-escola-amber text-white flex items-center justify-center font-extrabold text-sm shrink-0">3</span>
+                <h4 class="font-extrabold text-escola-amber text-base">Cultura Digital</h4>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-amber mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-amber font-extrabold">Segurança de Dados (1º–3º ano):</strong> Proteção de informações pessoais e cuidados no uso de dispositivos (EF01C007, EF03C009).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-amber mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-amber font-extrabold">Fontes Confiáveis (4º–5º ano):</strong> Verificação de informações na internet e combate às notícias falsas (EF04C008, EF05C008).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-amber mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-amber font-extrabold">Autoria e Direitos Autorais:</strong> Criação de histórias digitais e respeito às fontes pesquisadas (EF04C006, EF05C009).</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="bncc-computacao-finais" class="bncc-panel hidden mt-6 grid grid-cols-1 md:grid-cols-3 gap-5 fade-slide">
+            <div class="bg-[#EEF2FA] p-5 r-25 border-2 border-escola-royal/30 shadow-xs">
+              <div class="flex items-center gap-2.5 mb-3.5 pb-2.5 border-b border-escola-royal/20">
+                <span class="w-9 h-9 r-25 bg-escola-royal text-white flex items-center justify-center font-extrabold text-sm shrink-0">1</span>
+                <h4 class="font-extrabold text-escola-royal text-base">Pensamento Computacional</h4>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-royal mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-royal font-extrabold">Programação e Depuração (6º–7º ano):</strong> Algoritmos com repetições, vetores e correção de erros (EF06C002, EF07C002).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-royal mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-royal font-extrabold">Recursão e Listas (8º ano):</strong> Algoritmos clássicos de ordenação e busca (EF08C001, EF08C003).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-royal mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-royal font-extrabold">Grafos, Árvores e Autômatos (9º ano):</strong> Modelagem de robôs orientados por eventos e sensores (EF09C001, EF09C003).</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-[#EEF7FE] p-5 r-25 border-2 border-escola-sky/45 shadow-xs">
+              <div class="flex items-center gap-2.5 mb-3.5 pb-2.5 border-b border-escola-sky/30">
+                <span class="w-9 h-9 r-25 bg-escola-sky text-escola-navy flex items-center justify-center font-extrabold text-sm shrink-0">2</span>
+                <h4 style="color: #167BB8;" class="font-extrabold text-base">Mundo Digital</h4>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-sky mt-1.5 shrink-0"></span>
+                  <span><strong style="color: #167BB8;" class="font-extrabold">Redes e Protocolos (6º–7º ano):</strong> Transmissão de pacotes e regras de comunicação em rede (EF06C007, EF07C006).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-sky mt-1.5 shrink-0"></span>
+                  <span><strong style="color: #167BB8;" class="font-extrabold">Sistemas Distribuídos (8º ano):</strong> Funcionamento da internet, paralelismo e computação em nuvem (EF08C005, EF08C006).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-sky mt-1.5 shrink-0"></span>
+                  <span><strong style="color: #167BB8;" class="font-extrabold">Segurança e Criptografia (9º ano):</strong> Prevenção contra malwares e algoritmos de criptografia de dados (EF09C004, EF09C005).</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-[#FDF8EE] p-5 r-25 border-2 border-escola-amber/35 shadow-xs">
+              <div class="flex items-center gap-2.5 mb-3.5 pb-2.5 border-b border-escola-amber/25">
+                <span class="w-9 h-9 r-25 bg-escola-amber text-white flex items-center justify-center font-extrabold text-sm shrink-0">3</span>
+                <h4 class="font-extrabold text-escola-amber text-base">Cultura Digital</h4>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-amber mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-amber font-extrabold">Ética e Sustentabilidade (6º–7º ano):</strong> Combate ao <em>cyberbullying</em> e descarte consciente de lixo eletrônico (EF07C009, EF07C010).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-amber mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-amber font-extrabold">Privacidade e Termos de Uso (8º ano):</strong> Análise crítica de redes sociais e proteção de dados (EF08C008, EF08C009).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-amber mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-amber font-extrabold">Cidadania Digital (9º ano):</strong> Verificação de credibilidade da informação e soluções digitais para a cidade (EF09C006, EF09C010).</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="bncc-bncc-geral" class="bncc-panel hidden mt-6 grid grid-cols-1 md:grid-cols-3 gap-5 fade-slide">
+            <div class="bg-[#EEF7FE] p-5 r-25 border-2 border-escola-sky/45 shadow-xs">
+              <div class="flex items-center gap-2.5 mb-3.5 pb-2.5 border-b border-escola-sky/30">
+                <span class="w-9 h-9 r-25 bg-escola-sky text-escola-navy flex items-center justify-center font-extrabold text-sm shrink-0">1</span>
+                <h4 style="color: #167BB8;" class="font-extrabold text-base">Educação Infantil (BNCC / DCNEI)</h4>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-sky mt-1.5 shrink-0"></span>
+                  <span><strong style="color: #167BB8;" class="font-extrabold">Eixos Estruturantes:</strong> Vivências baseadas nas interações e brincadeiras com intencionalidade educativa.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-sky mt-1.5 shrink-0"></span>
+                  <span><strong style="color: #167BB8;" class="font-extrabold">Campos de Experiência:</strong> Desenvolvimento de <em>Escuta, fala, pensamento e imaginação</em> e <em>Espaços, tempos, quantidades e relações</em>.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-[#EEF2FA] p-5 r-25 border-2 border-escola-royal/30 shadow-xs">
+              <div class="flex items-center gap-2.5 mb-3.5 pb-2.5 border-b border-escola-royal/20">
+                <span class="w-9 h-9 r-25 bg-escola-royal text-white flex items-center justify-center font-extrabold text-sm shrink-0">2</span>
+                <h4 class="font-extrabold text-escola-royal text-base">Ensino Fundamental (9 Anos)</h4>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-royal mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-royal font-extrabold">Alfabetização Plena:</strong> Foco consolidado nos dois primeiros anos e transição cuidada entre Anos Iniciais e Finais.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-royal mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-royal font-extrabold">Protagonismo e Ciência:</strong> Valorização das culturas juvenis, pensamento científico e integração multidisciplinar.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-[#EFF7EC] p-5 r-25 border-2 border-escola-green/30 shadow-xs">
+              <div class="flex items-center gap-2.5 mb-3.5 pb-2.5 border-b border-escola-green/20">
+                <span class="w-9 h-9 r-25 bg-escola-green text-white flex items-center justify-center font-extrabold text-sm shrink-0">3</span>
+                <h4 class="font-extrabold text-escola-green text-base">EJA (Pacto Nacional MEC)</h4>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-green mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-green font-extrabold">Qualificação e Escolaridade:</strong> Alinhada ao Pacto Nacional pela Superação do Analfabetismo e Qualificação da EJA.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-escola-green mt-1.5 shrink-0"></span>
+                  <span><strong class="text-escola-green font-extrabold">Saberes do Trabalhador:</strong> Respeito à trajetória de vida e integração prática com o mundo digital e profissional.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="aee" data-section="aee" style="background-color: #AA8407;" class="bg-gradient-to-br from-[#8F6D04] via-[#AA8407] to-[#BE960E] py-12 sm:py-16 lg:py-20 border-t border-white/20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="bg-white r-25 shadow-2xl border-2 border-white/70 overflow-hidden grid grid-cols-1 lg:grid-cols-12 items-stretch">
+
+          <div class="lg:col-span-5 p-4 sm:p-6 lg:p-7 flex flex-col">
+            <div class="relative w-full h-full min-h-[290px] sm:min-h-[360px] lg:min-h-[440px] r-25 overflow-hidden shadow-md bg-escola-navy/10">
+              <img
+                src="Imagens/ImagensCapas/AEE/aee.jpg"
+                alt="Profissional cuidando e apoiando aluno no Atendimento Especializado (AEE)"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-cover object-center"
+                onerror="handlePhotoFallback(this, 'Atendimento Especializado (AEE)', '#AA8407')"
+              />
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-escola-navy/90 via-escola-navy/50 to-transparent p-4 sm:p-5 text-white">
+                <span class="inline-block bg-escola-gold text-escola-navy text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 r-25 mb-1">
+                  Inclusão & Acolhimento
+                </span>
+                <p class="text-xs sm:text-sm font-bold leading-snug">
+                  Acompanhamento individualizado e humanizado em cada etapa da aprendizagem
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 p-6 sm:p-8 lg:py-9 lg:pr-9 lg:pl-3 flex flex-col justify-between gap-6">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3.5">
+                <span style="background-color: rgba(170, 132, 7, 0.14); color: #785B04; border-color: rgba(170, 132, 7, 0.35);" class="inline-flex items-center gap-2 border text-xs sm:text-sm font-extrabold px-4 py-1.5 r-25">
+                  <img src="Imagens/Icones/ee-acolhimento-inclusao.png" alt="" loading="lazy" decoding="async" class="w-5 h-5 object-contain" onerror="handleIconFallback(this, 'heart')" />
+                  Atendimento Especializado (AEE)
+                </span>
+                <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 r-25">
+                  Sala de Recursos & Apoio em Sala
+                </span>
+              </div>
+
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-escola-navy leading-tight">
+                Seu filho(a) em boas mãos
+              </h2>
+
+              <p class="mt-3 text-sm sm:text-base text-slate-700 leading-relaxed">
+                Entendemos que cada criança é única. Promovemos um ambiente
+                <strong class="text-escola-navy">seguro, empático e estruturalmente adaptado</strong>
+                para estudantes com necessidades específicas (TEA, TDAH, deficiências físicas ou intelectuais), garantindo que o aprendizado aconteça no tempo de cada um.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-3.5">
+              <div class="hover-lift bg-[#F8FAFC] border-2 border-escola-royal/30 r-25 overflow-hidden shadow-xs flex items-stretch">
+                <div class="w-3 sm:w-4 bg-escola-royal shrink-0" aria-hidden="true"></div>
+                <div class="p-4 flex items-center gap-4 flex-1">
+                  <div class="w-12 h-12 r-25 bg-escola-royal/12 flex items-center justify-center shrink-0">
+                    <img src="Imagens/Icones/aee-cuidadores-apoio.png" alt="Adequação à rotina escolar" loading="lazy" decoding="async" class="w-6 h-6 object-contain" onerror="handleIconFallback(this, 'care')" />
+                  </div>
+                  <div>
+                    <h3 class="text-sm sm:text-base font-extrabold text-escola-navy leading-snug">
+                      Cuidadores capacitados e adequação à rotina escolar
+                    </h3>
+                    <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                      Apoio contínuo em sala de aula e acompanhamento individualizado respeitando o ritmo do estudante.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hover-lift bg-[#F6FBF5] border-2 border-escola-green/30 r-25 overflow-hidden shadow-xs flex items-stretch">
+                <div class="w-3 sm:w-4 bg-escola-green shrink-0" aria-hidden="true"></div>
+                <div class="p-4 flex items-center gap-4 flex-1">
+                  <div class="w-12 h-12 r-25 bg-escola-green/12 flex items-center justify-center shrink-0">
+                    <img src="Imagens/Icones/aee-material-adaptado.png" alt="Material didático lúdico e adaptado" loading="lazy" decoding="async" class="w-6 h-6 object-contain" onerror="handleIconFallback(this, 'puzzle')" />
+                  </div>
+                  <div>
+                    <h3 class="text-sm sm:text-base font-extrabold text-escola-navy leading-snug">
+                      Material didático lúdico e adaptado
+                    </h3>
+                    <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                      Recursos pedagógicos táteis, visuais e interativos que estimulam a cognição e a autonomia.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div style="border-color: rgba(170, 132, 7, 0.35);" class="hover-lift bg-[#FDF9EC] border-2 r-25 overflow-hidden shadow-xs flex items-stretch">
+                <div style="background-color: #AA8407;" class="w-3 sm:w-4 shrink-0" aria-hidden="true"></div>
+                <div class="p-4 flex items-center gap-4 flex-1">
+                  <div style="background-color: rgba(170, 132, 7, 0.16);" class="w-12 h-12 r-25 flex items-center justify-center shrink-0">
+                    <img src="Imagens/Icones/aee-acessibilidade.png" alt="Acessibilidade arquitetônica" loading="lazy" decoding="async" class="w-6 h-6 object-contain" onerror="handleIconFallback(this, 'access')" />
+                  </div>
+                  <div>
+                    <h3 class="text-sm sm:text-base font-extrabold text-escola-navy leading-snug">
+                      Acessibilidade arquitetônica total, sem barreiras físicas
+                    </h3>
+                    <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                      Ambientes planejados com mobilidade segura e entrada acessível em toda a estrutura escolar.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <span class="text-xs font-semibold text-slate-600">
+                Dúvidas sobre matrículas e suporte especializado?
+              </span>
+              <a
+                href="#meios-comunicacao"
+                style="background-color: #AA8407;"
+                class="btn-press inline-flex items-center justify-center gap-2 text-white text-xs sm:text-sm font-extrabold px-5 py-2.5 r-25 shadow-sm"
+              >
+                <span>Falar com a Coordenação</span>
+                <span>›</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="estrutura" data-section="ensino" class="bg-gradient-to-b from-[#F3F6FB] via-[#EBF2FA] to-[#F5F8FC] py-8 sm:py-11 border-t border-slate-200/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="mb-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-escola-royal">Aprender Fazendo</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-escola-navy mt-1 pb-2.5 border-b-2 border-escola-royal">
+            Nossa Estrutura em Números
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+          <div class="hover-lift bg-escola-skySoft border border-escola-sky/25 r-25 p-5 text-center">
+            <span class="block text-4xl sm:text-5xl font-black text-escola-royal">20</span>
+            <span class="block text-sm sm:text-base font-bold text-slate-600 mt-1">computadores</span>
+          </div>
+
+          <div class="hover-lift bg-escola-skySoft border border-escola-sky/25 r-25 p-5 text-center">
+            <span class="block text-4xl sm:text-5xl font-black text-escola-royal">12</span>
+            <span class="block text-sm sm:text-base font-bold text-slate-600 mt-1">kits de robótica</span>
+          </div>
+
+          <div class="hover-lift bg-escola-skySoft border border-escola-sky/25 r-25 p-5 text-center">
+            <span class="block text-4xl sm:text-5xl font-black text-escola-royal">+800</span>
+            <span class="block text-sm sm:text-base font-bold text-slate-600 mt-1">livros no acervo</span>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-4 mb-5">
+          <p class="text-xs sm:text-sm text-slate-500 font-medium">
+            Navegue pelos nossos espaços educativos (clique nas setas para controlar manualmente):
+          </p>
+          <div class="flex items-center gap-2">
+            <button
+              type="button"
+              onclick="manualStructureNav(-1)"
+              aria-label="Espaço anterior"
+              class="btn-press w-11 h-11 r-25 bg-escola-navy text-white flex items-center justify-center shadow-md hover:bg-escola-royal"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            <button
+              type="button"
+              onclick="manualStructureNav(1)"
+              aria-label="Próximo espaço"
+              class="btn-press w-11 h-11 r-25 bg-escola-navy text-white flex items-center justify-center shadow-md hover:bg-escola-royal"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="structure-carousel" class="flex lg:grid lg:grid-cols-3 gap-4 lg:gap-6 overflow-x-auto lg:overflow-visible snap-x snap-mandatory scroll-smooth pb-3 lg:pb-0 no-scrollbar items-stretch">
+
+          <article data-struct-idx="0" onclick="focusStructureCard(0)" class="structure-card shrink-0 w-[85%] sm:w-[68%] lg:w-auto snap-center cursor-pointer r-25 bg-white border-2 border-escola-royal/25 p-4 shadow-md transition-all duration-500 flex flex-col">
+            <div class="relative h-52 r-25 overflow-hidden bg-escola-royal mb-4 shrink-0">
+              <img
+                src="Imagens/Infraestrutura/labinforob.jpg"
+                alt="Laboratório de Informática e Robótica"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-cover"
+                onerror="handlePhotoFallback(this, 'Lab. de Informática e Robótica', '#1F438C')"
+              />
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-escola-navy via-escola-navy/85 to-transparent p-4 flex items-center gap-2.5 text-white">
+                <div class="w-9 h-9 r-25 bg-white/15 flex items-center justify-center shrink-0">
+                  <img src="Imagens/Icones/estrutura-robotica.png" alt="" loading="lazy" decoding="async" class="w-5 h-5 object-contain invert" onerror="handleIconFallback(this, 'robot')" />
+                </div>
+                <h3 class="font-extrabold text-base sm:text-lg">Lab. de Info e Robótica</h3>
+              </div>
+            </div>
+
+            <ul class="space-y-3 bg-[#EEF2FA] p-4 r-25 text-xs sm:text-sm text-slate-700 flex-1">
+              <li class="flex items-start gap-2.5">
+                <img src="Imagens/Icones/icone-check-lista.png" alt="Check" loading="lazy" decoding="async" style="filter: brightness(0) saturate(100%) invert(18%) sepia(68%) saturate(2250%) hue-rotate(211deg) brightness(89%) contrast(96%);" class="w-5 h-5 mt-0.5 shrink-0" onerror="handleIconFallback(this, 'checkRoyal')" />
+                <span><strong class="text-escola-royal">Programação e Circuitos:</strong> Aulas de programação por blocos via <strong>Scratch</strong>, além de simulação e montagem de <strong>circuitos elétricos</strong>.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <img src="Imagens/Icones/icone-check-lista.png" alt="Check" loading="lazy" decoding="async" style="filter: brightness(0) saturate(100%) invert(18%) sepia(68%) saturate(2250%) hue-rotate(211deg) brightness(89%) contrast(96%);" class="w-5 h-5 mt-0.5 shrink-0" onerror="handleIconFallback(this, 'checkRoyal')" />
+                <span><strong class="text-escola-royal">Aprendizagem Gamificada:</strong> Aulas dinâmicas e lúdicas com <strong>Kahoot!</strong>, <strong>Escola Games</strong> e <strong>Wordwall</strong> para ampliar interativamente os conteúdos de sala de aula.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <img src="Imagens/Icones/icone-check-lista.png" alt="Check" loading="lazy" decoding="async" style="filter: brightness(0) saturate(100%) invert(18%) sepia(68%) saturate(2250%) hue-rotate(211deg) brightness(89%) contrast(96%);" class="w-5 h-5 mt-0.5 shrink-0" onerror="handleIconFallback(this, 'checkRoyal')" />
+                <span><strong class="text-escola-royal">Digitação e Tecnologia:</strong> Práticas guiadas de <strong>digitação</strong> utilizando nossos <strong>20 computadores</strong> e <strong>12 kits de robótica</strong>.</span>
+              </li>
+            </ul>
+          </article>
+
+          <article data-struct-idx="1" onclick="focusStructureCard(1)" class="structure-card shrink-0 w-[85%] sm:w-[68%] lg:w-auto snap-center cursor-pointer r-25 bg-white border-2 border-escola-green/30 p-4 shadow-xl transition-all duration-500 flex flex-col">
+            <div class="relative h-52 r-25 overflow-hidden bg-escola-green mb-4 shrink-0">
+              <img
+                src="Imagens/Infraestrutura/labciencias.jpg"
+                alt="Laboratório de Ciências"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-cover"
+                onerror="handlePhotoFallback(this, 'Lab. de Ciências', '#185004')"
+              />
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0D2E02] via-[#0D2E02]/85 to-transparent p-4 flex items-center gap-2.5 text-white">
+                <div class="w-9 h-9 r-25 bg-white/15 flex items-center justify-center shrink-0">
+                  <img src="Imagens/Icones/estrutura-ciencias.png" alt="" loading="lazy" decoding="async" class="w-5 h-5 object-contain invert" onerror="handleIconFallback(this, 'science')" />
+                </div>
+                <h3 class="font-extrabold text-base sm:text-lg">Lab. de Ciências</h3>
+              </div>
+            </div>
+
+            <ul class="space-y-3 bg-emerald-50/70 p-4 r-25 text-xs sm:text-sm text-slate-700 flex-1">
+              <li class="flex items-start gap-2.5">
+                <img src="Imagens/Icones/icone-check-lista.png" alt="Check" loading="lazy" decoding="async" style="filter: brightness(0) saturate(100%) invert(18%) sepia(85%) saturate(2400%) hue-rotate(66deg) brightness(88%) contrast(98%);" class="w-5 h-5 mt-0.5 shrink-0" onerror="handleIconFallback(this, 'check')" />
+                <span><strong class="text-escola-green">Experimentos com Vidrarias:</strong> Realização de experimentos práticos e seguros utilizando <strong>vidrarias e materiais laboratoriais</strong>.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <img src="Imagens/Icones/icone-check-lista.png" alt="Check" loading="lazy" decoding="async" style="filter: brightness(0) saturate(100%) invert(18%) sepia(85%) saturate(2400%) hue-rotate(66deg) brightness(88%) contrast(98%);" class="w-5 h-5 mt-0.5 shrink-0" onerror="handleIconFallback(this, 'check')" />
+                <span><strong class="text-escola-green">Observação no Microscópio:</strong> Aulas práticas com <strong>microscópio</strong> para observar células, insetos e estruturas naturais.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <img src="Imagens/Icones/icone-check-lista.png" alt="Check" loading="lazy" decoding="async" style="filter: brightness(0) saturate(100%) invert(18%) sepia(85%) saturate(2400%) hue-rotate(66deg) brightness(88%) contrast(98%);" class="w-5 h-5 mt-0.5 shrink-0" onerror="handleIconFallback(this, 'check')" />
+                <span><strong class="text-escola-green">Ampliação dos Conteúdos:</strong> Vivências investigativas que complementam e aprofundam os temas dos <strong>livros de Ciências</strong>.</span>
+              </li>
+            </ul>
+          </article>
+
+          <article data-struct-idx="2" onclick="focusStructureCard(2)" class="structure-card shrink-0 w-[85%] sm:w-[68%] lg:w-auto snap-center cursor-pointer r-25 bg-white border-2 border-[#BA630D]/25 p-4 shadow-md transition-all duration-500 flex flex-col">
+            <div style="background-color: #BA630D;" class="relative h-52 r-25 overflow-hidden mb-4 shrink-0">
+              <img
+                src="Imagens/Infraestrutura/biblioteca.jpg"
+                alt="Biblioteca Escolar com mais de 800 livros"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-cover"
+                onerror="handlePhotoFallback(this, 'Biblioteca (+800 Livros)', '#BA630D')"
+              />
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#4A2504] via-[#4A2504]/85 to-transparent p-4 flex items-center gap-2.5 text-white">
+                <div class="w-9 h-9 r-25 bg-white/15 flex items-center justify-center shrink-0">
+                  <img src="Imagens/Icones/estrutura-biblioteca.png" alt="" loading="lazy" decoding="async" class="w-5 h-5 object-contain invert" onerror="handleIconFallback(this, 'book')" />
+                </div>
+                <h3 class="font-extrabold text-base sm:text-lg">Biblioteca (+800 Livros)</h3>
+              </div>
+            </div>
+
+            <ul class="space-y-3 bg-[#FDF4EC] p-4 r-25 text-xs sm:text-sm text-slate-700 flex-1">
+              <li class="flex items-start gap-2.5">
+                <img src="Imagens/Icones/icone-check-lista.png" alt="Check" loading="lazy" decoding="async" style="filter: brightness(0) saturate(100%) invert(43%) sepia(83%) saturate(1650%) hue-rotate(12deg) brightness(93%) contrast(94%);" class="w-5 h-5 mt-0.5 shrink-0" onerror="handleIconFallback(this, 'checkOrange')" />
+                <span><strong style="color: #BA630D;">Acervo por Faixa Etária:</strong> Mais de <strong>800 livros literários e paradidáticos</strong> alinhados a cada etapa e faixa etária escolar.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <img src="Imagens/Icones/icone-check-lista.png" alt="Check" loading="lazy" decoding="async" style="filter: brightness(0) saturate(100%) invert(43%) sepia(83%) saturate(1650%) hue-rotate(12deg) brightness(93%) contrast(94%);" class="w-5 h-5 mt-0.5 shrink-0" onerror="handleIconFallback(this, 'checkOrange')" />
+                <span><strong style="color: #BA630D;">Jogos e Mapas Educativos:</strong> Disponibilidade de <strong>jogos educacionais e mapas</strong> para enriquecer as aulas e a pesquisa.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <img src="Imagens/Icones/icone-check-lista.png" alt="Check" loading="lazy" decoding="async" style="filter: brightness(0) saturate(100%) invert(43%) sepia(83%) saturate(1650%) hue-rotate(12deg) brightness(93%) contrast(94%);" class="w-5 h-5 mt-0.5 shrink-0" onerror="handleIconFallback(this, 'checkOrange')" />
+                <span><strong style="color: #BA630D;">Catálogo Pedagógico Completo:</strong> Vasto acervo de <strong>recursos pedagógicos</strong> voltados ao desenvolvimento integral e incentivo à leitura.</span>
+              </li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="extracurricular" data-section="ensino" style="background-color: #182E59;" class="bg-gradient-to-br from-[#132548] via-[#182E59] to-[#1F3B70] py-10 sm:py-14 border-t border-white/15">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="mb-8">
+          <span class="inline-block bg-escola-gold text-escola-navy text-xs font-extrabold uppercase tracking-widest px-4 py-1 r-25 mb-2.5 shadow-xs">
+            Além da Sala de Aula
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Atividades Extracurriculares
+          </h2>
+          <p class="text-sm sm:text-base text-white/85 mt-2 leading-relaxed max-w-3xl">
+            Acreditamos no desenvolvimento integral do estudante. Corpo e mente saudáveis através de esportes, artes e dança.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          <div class="lg:col-span-6 flex flex-col justify-between gap-4">
+
+            <div style="border-color: #BA630D;" class="hover-lift bg-white p-4 sm:p-5 r-25 flex items-start gap-4 border-[3px] shadow-lg">
+              <div style="background-color: rgba(186, 99, 13, 0.1); border-color: rgba(186, 99, 13, 0.4);" class="w-14 h-14 p-2.5 r-25 border-2 flex items-center justify-center shrink-0">
+                <img
+                  src="Imagens/Icones/extra-esportes.png"
+                  alt="Ícone de Esportes e Jogos Escolares"
+                  loading="lazy"
+                  decoding="async"
+                  data-color="#BA630D"
+                  style="filter: brightness(0) saturate(100%) invert(43%) sepia(83%) saturate(1650%) hue-rotate(12deg) brightness(93%) contrast(94%);"
+                  class="w-8 h-8 object-contain block"
+                  onerror="handleIconFallback(this, 'sports')"
+                />
+              </div>
+              <div>
+                <h3 style="color: #BA630D;" class="font-extrabold text-base sm:text-lg">Esportes e Jogos Escolares</h3>
+                <p class="text-xs sm:text-sm mt-1 text-slate-700 leading-relaxed">
+                  Treinamentos de <strong style="color: #BA630D;">futebol/futsal</strong> e atividades físicas focados em disciplina, saúde e trabalho em equipe.
+                </p>
+              </div>
+            </div>
+
+            <div style="border-color: #3DADF2;" class="hover-lift bg-white p-4 sm:p-5 r-25 flex items-start gap-4 border-[3px] shadow-lg">
+              <div style="background-color: rgba(61, 173, 242, 0.12); border-color: rgba(61, 173, 242, 0.5);" class="w-14 h-14 p-2.5 r-25 border-2 flex items-center justify-center shrink-0">
+                <img
+                  src="Imagens/Icones/extra-artes-musica.png"
+                  alt="Ícone de Artes e Música"
+                  loading="lazy"
+                  decoding="async"
+                  data-color="#3DADF2"
+                  style="filter: brightness(0) saturate(100%) invert(61%) sepia(63%) saturate(2340%) hue-rotate(166deg) brightness(98%) contrast(92%);"
+                  class="w-8 h-8 object-contain block"
+                  onerror="handleIconFallback(this, 'art')"
+                />
+              </div>
+              <div>
+                <h3 style="color: #167BB8;" class="font-extrabold text-base sm:text-lg">Artes e Música</h3>
+                <p class="text-xs sm:text-sm mt-1 text-slate-700 leading-relaxed">
+                  Oficinas criativas de <strong style="color: #167BB8;">pintura, expressão artística e musicalidade</strong> para estimular a sensibilidade cultural.
+                </p>
+              </div>
+            </div>
+
+            <div style="border-color: #185004;" class="hover-lift bg-white p-4 sm:p-5 r-25 flex items-start gap-4 border-[3px] shadow-lg">
+              <div style="background-color: rgba(24, 80, 4, 0.1); border-color: rgba(24, 80, 4, 0.45);" class="w-14 h-14 p-2.5 r-25 border-2 flex items-center justify-center shrink-0">
+                <img
+                  src="Imagens/Icones/extra-danca-cultura.png"
+                  alt="Ícone de Dança e Cultura Popular"
+                  loading="lazy"
+                  decoding="async"
+                  data-color="#185004"
+                  style="filter: brightness(0) saturate(100%) invert(18%) sepia(85%) saturate(2400%) hue-rotate(66deg) brightness(88%) contrast(98%);"
+                  class="w-8 h-8 object-contain block"
+                  onerror="handleIconFallback(this, 'dance')"
+                />
+              </div>
+              <div>
+                <h3 style="color: #185004;" class="font-extrabold text-base sm:text-lg">Dança e Cultura Popular</h3>
+                <p class="text-xs sm:text-sm mt-1 text-slate-700 leading-relaxed">
+                  <strong style="color: #185004;">Coreografias, ritmos nordestinos</strong> e apresentações em eventos cívicos e festivais escolares.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="lg:col-span-6 flex">
+            <div class="relative w-full h-[300px] sm:h-[360px] lg:h-[395px] r-25 overflow-hidden shadow-2xl border-2 border-white/25 bg-[#0F1E3C]">
+              <img
+                id="extra-carousel-img"
+                src="Imagens/AtividadesExtraCurriculares/kits-robotica-componentes.jpeg"
+                alt="Alunos em Atividades Extracurriculares"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-cover object-center transition-opacity duration-700"
+                onerror="handlePhotoFallback(this, 'Oficinas de Robótica e Tecnologia', '#182E59')"
+              />
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0D1A36]/95 via-[#182E59]/70 to-transparent p-5 text-white">
+                <span id="extra-carousel-tag" class="inline-block bg-escola-gold text-escola-navy text-xs font-extrabold uppercase tracking-wider px-3.5 py-1 r-25 shadow-sm mb-1.5">
+                  Kits de Robótica e Componentes Eletrônicos
+                </span>
+                <p id="extra-carousel-label" class="text-sm sm:text-base font-bold mt-0.5 leading-snug">
+                  Placas Arduino, protoboards, sensores ultrassônicos, servomotores, displays e resistores nas oficinas práticas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contato" data-section="contato" class="bg-gradient-to-b from-[#E6EFFA] via-[#F1F5FB] to-[#E3ECF8] py-8 sm:py-11 border-t border-slate-200/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="bg-escola-navy text-white text-center py-4 px-6 r-25 shadow-md mb-6">
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-widest uppercase">NOSSO ENDEREÇO</h2>
+        </div>
+
+        <div class="bg-white r-25 p-4 sm:p-5 shadow-sm border border-escola-royal/20 mb-6">
+          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-escola-royal">Atenção aos Locais de Aula</span>
+              <h3 class="text-base sm:text-lg font-extrabold text-escola-navy">Selecione a unidade para visualizar o endereço e o link do Maps:</h3>
+            </div>
+            <div class="flex flex-wrap gap-2 w-full md:w-auto">
+              <button
+                type="button"
+                id="btn-unit-sede"
+                onclick="switchUnit('sede')"
+                class="flex-1 md:flex-initial bg-escola-navy text-white text-xs sm:text-sm font-bold px-5 py-3 r-25 shadow-sm transition"
+              >
+                Sede Principal (Fund. 1, 2 e EJA)
+              </button>
+              <button
+                type="button"
+                id="btn-unit-anexo"
+                onclick="switchUnit('anexo')"
+                class="flex-1 md:flex-initial bg-escola-ice text-escola-navy hover:bg-[#AA8407]/15 text-xs sm:text-sm font-bold px-5 py-3 r-25 transition"
+              >
+                Anexo (Ed. Infantil 1 e 2)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white r-25 p-6 sm:p-8 shadow-sm border border-slate-200/80 mb-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+
+            <div class="lg:col-span-7">
+              <div class="flex flex-wrap items-center gap-2 mb-5">
+                <h3 class="text-xl sm:text-2xl font-extrabold text-escola-navy uppercase">ONDE ESTAMOS:</h3>
+                <span id="unit-badge" class="bg-escola-royal text-white text-xs font-bold px-3 py-1 r-25">
+                  Fund. 1, 2 e EJA
+                </span>
+              </div>
+
+              <ul class="space-y-3.5 text-sm sm:text-base text-slate-800">
+                <li class="flex items-start gap-3.5">
+                  <img src="Imagens/Icones/institucional-escola.png" alt="Unidade" loading="lazy" decoding="async" class="w-7 h-7 object-contain shrink-0 mt-0.5" onerror="handleIconFallback(this, 'school')" />
+                  <span><strong class="text-escola-navy">Unidade:</strong> <span id="addr-name">Escola Municipal 31 de Março (Sede Principal)</span></span>
+                </li>
+                <li class="flex items-start gap-3.5">
+                  <img src="Imagens/Icones/endereco-rua-busca.png" alt="Endereço" loading="lazy" decoding="async" class="w-7 h-7 object-contain shrink-0 mt-0.5" onerror="handleIconFallback(this, 'pin')" />
+                  <span><strong id="addr-street-label" class="text-escola-navy">Rua:</strong> <span id="addr-street">Brasília, nº 455</span></span>
+                </li>
+                <li class="flex items-start gap-3.5">
+                  <img src="Imagens/Icones/endereco-pino-mapa.png" alt="Bairro" loading="lazy" decoding="async" class="w-7 h-7 object-contain shrink-0 mt-0.5" onerror="handleIconFallback(this, 'pin')" />
+                  <span><strong class="text-escola-navy">Bairro / Cidade:</strong> <span id="addr-district">Brasília — Arapiraca - AL</span></span>
+                </li>
+                <li class="flex items-start gap-3.5">
+                  <img src="Imagens/Icones/endereco-cep.png" alt="CEP" loading="lazy" decoding="async" class="w-7 h-7 object-contain shrink-0 mt-0.5" onerror="handleIconFallback(this, 'mail')" />
+                  <span><strong class="text-escola-navy">CEP:</strong> <span id="addr-cep">57313-130</span></span>
+                </li>
+                <li id="addr-extra-row" class="flex items-start gap-3.5">
+                  <img id="addr-extra-icon" src="Imagens/Icones/endereco-referencia.png" alt="Informação complementar" loading="lazy" decoding="async" class="w-7 h-7 object-contain shrink-0 mt-0.5" onerror="handleIconFallback(this, 'ref')" />
+                  <span><strong id="addr-extra-label" class="text-escola-navy">Ponto de referência:</strong> <span id="addr-ref">Musubi cozinha oriental</span></span>
+                </li>
+                <li id="addr-access-row" class="flex items-start gap-3.5">
+                  <img src="Imagens/Icones/aee-acessibilidade.png" alt="Acessibilidade" loading="lazy" decoding="async" class="w-7 h-7 object-contain shrink-0 mt-0.5" onerror="handleIconFallback(this, 'access')" />
+                  <span><strong class="text-escola-navy">Acessibilidade:</strong> <span id="addr-access">Entrada acessível para cadeirantes</span></span>
+                </li>
+              </ul>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <button
+                  type="button"
+                  onclick="copyCurrentAddress()"
+                  class="btn-press flex-1 sm:flex-initial inline-flex items-center justify-center gap-3 bg-escola-navy text-white font-extrabold text-sm uppercase tracking-wider px-6 py-4 r-25 shadow-md"
+                >
+                  <img src="Imagens/Icones/arquivo.png" alt="" loading="lazy" decoding="async" class="w-5 h-5 object-contain invert" onerror="handleIconFallback(this, 'doc')" />
+                  <span>COPIAR ENDEREÇO</span>
+                </button>
+
+                <a
+                  id="btn-open-maps"
+                  href="https://maps.app.goo.gl/93f4f5LR5EqnaCz46"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-press flex-1 sm:flex-initial inline-flex items-center justify-center gap-3 bg-escola-royal text-white font-extrabold text-sm uppercase tracking-wider px-6 py-4 r-25 shadow-md"
+                >
+                  <img src="Imagens/Icones/endereco-pino-mapa.png" alt="Pino de localização" loading="lazy" decoding="async" class="w-5 h-5 object-contain invert" onerror="handleIconFallback(this, 'pinWhite')" />
+                  <span>ACESSAR MAPS</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5">
+              <div id="map-side-card" class="bg-escola-skySoft border-2 border-escola-royal/25 r-25 p-6 text-center flex flex-col items-center justify-center">
+                <div id="map-side-icon-box" class="w-16 h-16 r-25 bg-escola-navy text-white flex items-center justify-center mb-4 shadow-md">
+                  <img src="Imagens/Icones/endereco-pino-mapa.png" alt="Localização no Maps" loading="lazy" decoding="async" class="w-8 h-8 object-contain invert" onerror="handleIconFallback(this, 'pinWhite')" />
+                </div>
+                <span id="map-card-tag" class="text-xs font-extrabold uppercase tracking-wider text-escola-royal">Rota Rápida</span>
+                <h4 id="map-card-title" class="text-lg font-extrabold text-escola-navy mt-1">
+                  Sede Principal • Arapiraca - AL
+                </h4>
+                <p id="map-card-desc" class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                  Clique no botão <strong>Acessar Maps</strong> para abrir a rota ou em <strong>Copiar Endereço</strong> para colar diretamente no <strong>Uber</strong> ou Google Maps.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="meios-comunicacao" class="scroll-mt-32 bg-white r-25 overflow-hidden shadow-md border border-slate-200/80">
+          <div class="bg-gradient-to-r from-escola-navy via-escola-royal to-escola-navy text-white text-center py-4 px-6 r-bottom-25 shadow-sm">
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-widest uppercase text-white">
+              MEIOS DE COMUNICAÇÃO
+            </h2>
+          </div>
+
+          <div class="flex flex-col items-center justify-center py-6 px-4 bg-gradient-to-b from-escola-skySoft/60 to-white">
+            <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-white p-2.5 shadow-xl border-4 border-escola-navy/15 flex items-center justify-center overflow-hidden hover:scale-105 transition-transform duration-300">
+              <img
+                src="Imagens/Logo/logo31demarco.png"
+                alt="Logo Oficial - Escola Municipal 31 de Março"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-contain rounded-full"
+                onerror="handlePhotoFallback(this, 'Escola 31 de Março', '#182E59')"
+              />
+            </div>
+            <span class="mt-3 inline-block bg-escola-navy text-white text-xs font-extrabold uppercase tracking-wider px-4 py-1 r-25 shadow-xs">
+              Escola Municipal 31 de Março • Arapiraca - AL
+            </span>
+          </div>
+
+          <div class="px-4 sm:px-8 pb-7">
+            <div class="bg-escola-navy text-white r-25 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/15 overflow-hidden shadow-lg">
+
+              <div class="group p-6 sm:p-8 flex flex-col justify-between hover:bg-white/[0.04] transition-colors duration-300">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-5">
+                    <div class="flex items-center gap-3.5">
+                      <div class="w-12 h-12 r-25 bg-white/10 group-hover:bg-white/20 flex items-center justify-center transition-colors">
+                        <img src="Imagens/Icones/contato-secretaria.png" alt="Secretaria" loading="lazy" decoding="async" class="w-7 h-7 object-contain invert group-hover:scale-110 transition-transform" onerror="handleIconFallback(this, 'doc')" />
+                      </div>
+                      <h3 class="text-xl sm:text-2xl font-extrabold tracking-wide uppercase">SECRETARIA</h3>
+                    </div>
+                    <span class="inline-flex items-center gap-1.5 bg-white/10 text-escola-gold text-[11px] font-bold px-3 py-1 r-25">
+                      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                      Atendimento
+                    </span>
+                  </div>
+
+                  <div class="space-y-3.5 text-sm sm:text-base">
+                    <div class="flex items-center justify-between gap-2 bg-white/5 hover:bg-white/10 px-3.5 py-2.5 r-25 transition-colors">
+                      <a href="tel:+5582987331869" data-phone-link="secretaria" class="flex items-center gap-3 font-bold hover:text-escola-gold transition-colors">
+                        <img src="Imagens/Icones/contato-telefone.png" alt="Telefone" loading="lazy" decoding="async" class="w-5 h-5 object-contain invert" onerror="handleIconFallback(this, 'phone')" />
+                        <span id="phone-text-secretaria">(82) 9 8733-1869</span>
+                      </a>
+                      <button
+                        type="button"
+                        onclick="copyContactPhone('phone-text-secretaria', 'Secretaria', this)"
+                        class="btn-press text-[11px] font-extrabold uppercase tracking-wider bg-white/15 hover:bg-escola-gold hover:text-escola-navy px-3 py-1 r-25 transition-colors"
+                      >
+                        Copiar
+                      </button>
+                    </div>
+                    <div class="flex items-center gap-3 px-1">
+                      <img src="Imagens/Icones/contato-horario.png" alt="Horário" loading="lazy" decoding="async" class="w-5 h-5 object-contain invert shrink-0" onerror="handleIconFallback(this, 'clock')" />
+                      <span class="font-medium text-white/90">Segunda a sexta: 08:00 às 22:00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-7">
+                  <a
+                    id="link-whatsapp-secretaria"
+                    href="https://wa.me/+5582987331869"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-official-link="whatsapp-secretaria"
+                    style="background-color: #185004;"
+                    class="btn-press group/btn w-full inline-flex items-center justify-center gap-3 text-white font-extrabold text-sm sm:text-base py-3.5 px-6 r-25 shadow-md hover:shadow-xl ring-2 ring-transparent hover:ring-white/30"
+                  >
+                    <img src="Imagens/Icones/social-whatsap.png" alt="WhatsApp" loading="lazy" decoding="async" class="w-6 h-6 object-contain group-hover/btn:scale-110 transition-transform" onerror="handleIconFallback(this, 'whatsapp')" />
+                    <span>Conversar no Whatsapp</span>
+                    <span class="group-hover/btn:translate-x-1 transition-transform">›</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="group p-6 sm:p-8 flex flex-col justify-between hover:bg-white/[0.04] transition-colors duration-300">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-5">
+                    <div class="flex items-center gap-3.5">
+                      <div class="w-12 h-12 r-25 bg-white/10 group-hover:bg-white/20 flex items-center justify-center transition-colors">
+                        <img src="Imagens/Icones/contato-coordenacao.png" alt="Coordenação" loading="lazy" decoding="async" class="w-7 h-7 object-contain invert group-hover:scale-110 transition-transform" onerror="handleIconFallback(this, 'collab')" />
+                      </div>
+                      <h3 class="text-xl sm:text-2xl font-extrabold tracking-wide uppercase">COORDENAÇÃO</h3>
+                    </div>
+                    <span class="inline-flex items-center gap-1.5 bg-white/10 text-escola-gold text-[11px] font-bold px-3 py-1 r-25">
+                      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                      Pedagógico
+                    </span>
+                  </div>
+
+                  <div class="space-y-3.5 text-sm sm:text-base">
+                    <div class="flex items-center justify-between gap-2 bg-white/5 hover:bg-white/10 px-3.5 py-2.5 r-25 transition-colors">
+                      <a href="tel:++5582996602772" data-phone-link="coordenacao" class="flex items-center gap-3 font-bold hover:text-escola-gold transition-colors">
+                        <img src="Imagens/Icones/contato-telefone.png" alt="Telefone" loading="lazy" decoding="async" class="w-5 h-5 object-contain invert" onerror="handleIconFallback(this, 'phone')" />
+                        <span id="phone-text-coordenacao">(82) 9 9660-2772</span>
+                      </a>
+                      <button
+                        type="button"
+                        onclick="copyContactPhone('phone-text-coordenacao', 'Coordenação', this)"
+                        class="btn-press text-[11px] font-extrabold uppercase tracking-wider bg-white/15 hover:bg-escola-gold hover:text-escola-navy px-3 py-1 r-25 transition-colors"
+                      >
+                        Copiar
+                      </button>
+                    </div>
+                    <div class="flex items-center gap-3 px-1">
+                      <img src="Imagens/Icones/contato-horario.png" alt="Horário" loading="lazy" decoding="async" class="w-5 h-5 object-contain invert shrink-0" onerror="handleIconFallback(this, 'clock')" />
+                      <span class="font-medium text-white/90">Segunda a sexta: 08:00 às 22:00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-7">
+                  <a
+                    id="link-whatsapp-coordenacao"
+                    href="https://wa.me/+5582996602772"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-official-link="whatsapp-coordenacao"
+                    style="background-color: #185004;"
+                    class="btn-press group/btn w-full inline-flex items-center justify-center gap-3 text-white font-extrabold text-sm sm:text-base py-3.5 px-6 r-25 shadow-md hover:shadow-xl ring-2 ring-transparent hover:ring-white/30"
+                  >
+                    <img src="Imagens/Icones/social-whatsap.png" alt="WhatsApp" loading="lazy" decoding="async" class="w-6 h-6 object-contain group-hover/btn:scale-110 transition-transform" onerror="handleIconFallback(this, 'whatsapp')" />
+                    <span>Conversar no Whatsapp</span>
+                    <span class="group-hover/btn:translate-x-1 transition-transform">›</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="duvidas" data-section="duvidas" class="bg-gradient-to-br from-[#DEEFFC] via-[#ECF6FE] to-[#E0F0FC] py-8 sm:py-11 border-t border-escola-sky/25">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-7">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-escola-royal">Central de Ajuda aos Pais e Alunos</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-escola-navy mt-1">Dúvidas Frequentes</h2>
+          <p class="text-sm sm:text-base text-slate-600 mt-2">
+            Respostas rápidas sobre matrículas, locais de aula, Atendimento Especializado (AEE) e turnos.
+          </p>
+        </div>
+
+        <div class="space-y-3.5">
+          <div class="faq-item bg-white r-25 border-2 border-escola-royal/20 hover:border-escola-royal/45 shadow-sm overflow-hidden transition-colors">
+            <button type="button" onclick="toggleFaq(this)" aria-expanded="false" class="w-full text-left px-6 py-4 flex items-center justify-between gap-4 font-extrabold text-escola-navy text-base sm:text-lg focus:outline-none">
+              <span>1. Onde funcionam as turmas da Educação Infantil e do Ensino Fundamental?</span>
+              <span class="faq-chevron w-8 h-8 r-25 bg-escola-navy text-white flex items-center justify-center transition-transform duration-300 shrink-0 text-xs">▼</span>
+            </button>
+            <div class="faq-answer px-6 text-sm sm:text-base text-slate-700 leading-relaxed">
+              <div class="pb-4 pt-1 border-t border-slate-100">
+                As turmas da <strong class="text-escola-navy">Educação Infantil 1 e 2 (4 e 5 anos)</strong> funcionam exclusivamente no <strong style="color: #AA8407;">Anexo da Escola 31 de Março (Antigo João Paulo II)</strong>, localizado na R. Bela Vista, 451 – Brasília, Arapiraca – AL. Já as turmas do <strong class="text-escola-navy">Ensino Fundamental 1 (1º ao 5º ano), Ensino Fundamental 2 (6º ao 9º ano) e EJA</strong> acontecem na <strong class="text-escola-royal">Sede Principal</strong> (Rua Brasília, nº 455).
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item bg-white r-25 border-2 border-escola-royal/20 hover:border-escola-royal/45 shadow-sm overflow-hidden transition-colors">
+            <button type="button" onclick="toggleFaq(this)" aria-expanded="false" class="w-full text-left px-6 py-4 flex items-center justify-between gap-4 font-extrabold text-escola-navy text-base sm:text-lg focus:outline-none">
+              <span>2. Quais são os turnos de funcionamento da escola?</span>
+              <span class="faq-chevron w-8 h-8 r-25 bg-escola-navy text-white flex items-center justify-center transition-transform duration-300 shrink-0 text-xs">▼</span>
+            </button>
+            <div class="faq-answer px-6 text-sm sm:text-base text-slate-700 leading-relaxed">
+              <div class="pb-4 pt-1 border-t border-slate-100">
+                O <strong class="text-escola-navy">Ensino Fundamental 1 (1º ao 5º ano)</strong> funciona no turno <strong class="text-escola-amber">Vespertino</strong>, enquanto o <strong class="text-escola-navy">Ensino Fundamental 2 (6º ao 9º ano)</strong> ocorre no turno <strong class="text-escola-royal">Matutino</strong>. A Educação Infantil atende nos turnos Matutino e Vespertino (no Anexo) e a <strong class="text-escola-green">EJA</strong> no período <strong class="text-escola-navy">Noturno</strong>.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item bg-white r-25 border-2 border-escola-royal/20 hover:border-escola-royal/45 shadow-sm overflow-hidden transition-colors">
+            <button type="button" onclick="toggleFaq(this)" aria-expanded="false" class="w-full text-left px-6 py-4 flex items-center justify-between gap-4 font-extrabold text-escola-navy text-base sm:text-lg focus:outline-none">
+              <span>3. Como funciona o Atendimento Educacional Especializado (AEE)?</span>
+              <span class="faq-chevron w-8 h-8 r-25 bg-escola-navy text-white flex items-center justify-center transition-transform duration-300 shrink-0 text-xs">▼</span>
+            </button>
+            <div class="faq-answer px-6 text-sm sm:text-base text-slate-700 leading-relaxed">
+              <div class="pb-4 pt-1 border-t border-slate-100">
+                Oferecemos acompanhamento individualizado com <strong class="text-escola-navy">profissionais e cuidadores capacitados</strong>, sala de recursos multifuncionais, <strong class="text-escola-navy">materiais didáticos lúdicos adaptados</strong> e <strong class="text-escola-navy">acessibilidade arquitetônica completa</strong> para crianças com TEA, TDAH e demais necessidades específicas.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item bg-white r-25 border-2 border-escola-royal/20 hover:border-escola-royal/45 shadow-sm overflow-hidden transition-colors">
+            <button type="button" onclick="toggleFaq(this)" aria-expanded="false" class="w-full text-left px-6 py-4 flex items-center justify-between gap-4 font-extrabold text-escola-navy text-base sm:text-lg focus:outline-none">
+              <span>4. Todos os alunos têm acesso às aulas de Informática, Robótica e Biblioteca?</span>
+              <span class="faq-chevron w-8 h-8 r-25 bg-escola-navy text-white flex items-center justify-center transition-transform duration-300 shrink-0 text-xs">▼</span>
+            </button>
+            <div class="faq-answer px-6 text-sm sm:text-base text-slate-700 leading-relaxed">
+              <div class="pb-4 pt-1 border-t border-slate-100">
+                <strong class="text-escola-navy">Sim!</strong> As atividades de Pensamento Computacional, Robótica (com nossos <strong class="text-escola-royal">20 computadores e 12 kits</strong>), Laboratório de Ciências e empréstimo na Biblioteca (+800 livros) fazem parte da rotina pedagógica da escola sem nenhum custo adicional.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item bg-white r-25 border-2 border-escola-royal/20 hover:border-escola-royal/45 shadow-sm overflow-hidden transition-colors">
+            <button type="button" onclick="toggleFaq(this)" aria-expanded="false" class="w-full text-left px-6 py-4 flex items-center justify-between gap-4 font-extrabold text-escola-navy text-base sm:text-lg focus:outline-none">
+              <span>5. Quais documentos são necessários para realizar a matrícula?</span>
+              <span class="faq-chevron w-8 h-8 r-25 bg-escola-navy text-white flex items-center justify-center transition-transform duration-300 shrink-0 text-xs">▼</span>
+            </button>
+            <div class="faq-answer px-6 text-sm sm:text-base text-slate-700 leading-relaxed">
+              <div class="pb-4 pt-1 border-t border-slate-100">
+                Para efetivar a matrícula na Secretaria, apresente: <strong class="text-escola-navy">Certidão de Nascimento ou RG do estudante, CPF, Cartão do SUS, Cartão de Vacinação atualizado, Comprovante de Residência, Declaração/Histórico Escolar</strong> e documentos pessoais do responsável.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item bg-white r-25 border-2 border-escola-royal/20 hover:border-escola-royal/45 shadow-sm overflow-hidden transition-colors">
+            <button type="button" onclick="toggleFaq(this)" aria-expanded="false" class="w-full text-left px-6 py-4 flex items-center justify-between gap-4 font-extrabold text-escola-navy text-base sm:text-lg focus:outline-none">
+              <span>6. Qual é o Código INEP da Escola Municipal 31 de Março?</span>
+              <span class="faq-chevron w-8 h-8 r-25 bg-escola-navy text-white flex items-center justify-center transition-transform duration-300 shrink-0 text-xs">▼</span>
+            </button>
+            <div class="faq-answer px-6 text-sm sm:text-base text-slate-700 leading-relaxed">
+              <div class="pb-4 pt-1 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <span>
+                  O Código INEP oficial da Escola Municipal de Ensino Fundamental 31 de Março é <strong class="text-escola-royal font-black">27017311</strong>. Esse registro identifica a instituição junto ao Ministério da Educação (MEC), Censo Escolar e IDEB.
+                </span>
+                <button
+                  type="button"
+                  onclick="copyTextValue('27017311', 'Código INEP 27017311 copiado!')"
+                  class="btn-press shrink-0 bg-escola-navy text-white text-xs font-extrabold uppercase tracking-wider px-4 py-2.5 r-25 shadow-xs"
+                >
+                  Copiar INEP
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-gradient-to-br from-escola-navy via-escola-royal to-escola-navy text-white r-top-25 pt-10 pb-7 relative overflow-hidden">
+    <svg class="absolute top-0 inset-x-0 w-full h-8 text-white/5 pointer-events-none" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="currentColor" d="M0,32 C360,80 1080,0 1440,48 L1440,0 L0,0 Z"></path>
+    </svg>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-white/15">
+
+        <div>
+          <span class="inline-block bg-escola-gold text-escola-navy text-xs font-extrabold uppercase tracking-wider px-3 py-1 r-25 mb-3">
+            Conecte-se Conosco
+          </span>
+          <h3 class="text-xl font-extrabold mb-2">Instagram Oficial</h3>
+          <p class="text-sm text-white/80 leading-relaxed mb-4">
+            Acompanhe o dia a dia, projetos, conquistas e eventos da Escola Municipal 31 de Março nas redes sociais.
+          </p>
+          <a
+            href="https://www.instagram.com/escola31dm?gwpx=eTE4aGtmMjE1eGNp"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-press inline-flex items-center gap-3 bg-white text-escola-navy font-extrabold text-sm px-5 py-3 r-25 shadow-md"
+          >
+            <img src="Imagens/Icones/social-instagram.png" alt="Instagram da Escola" loading="lazy" decoding="async" class="w-6 h-6 object-contain" onerror="handleIconFallback(this, 'insta')" />
+            <span>@escola31dm</span>
+          </a>
+        </div>
+
+        <div>
+          <h3 class="text-base font-extrabold uppercase tracking-wider text-escola-gold mb-4">Institucional</h3>
+          <ul class="space-y-2.5 text-sm text-white/85">
+            <li><a href="#aviso-unidades" onclick="goToUnitsNotice(event)" class="hover:text-escola-gold transition">Início</a></li>
+            <li><a href="#sobre" class="hover:text-escola-gold transition">Sobre a Escola</a></li>
+            <li><a href="#galeria-fotos" class="hover:text-escola-gold transition">Galeria de Fotos</a></li>
+            <li><a href="#premiacoes" class="hover:text-escola-gold transition">IDEB e Galeria de Troféus</a></li>
+            <li><a href="#estrutura" class="hover:text-escola-gold transition">Nossa Estrutura</a></li>
+            <li><a href="#duvidas" class="hover:text-escola-gold transition">Dúvidas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-extrabold uppercase tracking-wider text-escola-gold mb-4">Níveis de Ensino</h3>
+          <ul class="space-y-2.5 text-sm text-white/85">
+            <li><a href="#ensino" onclick="openModalityModal('infantil')" class="hover:text-escola-gold transition">Educação Infantil 1 e 2 (Anexo)</a></li>
+            <li><a href="#ensino" onclick="openModalityModal('fund1')" class="hover:text-escola-gold transition">Ensino Fundamental I (1º ao 5º)</a></li>
+            <li><a href="#ensino" onclick="openModalityModal('fund2')" class="hover:text-escola-gold transition">Ensino Fundamental II (6º ao 9º)</a></li>
+            <li><a href="#ensino" onclick="openModalityModal('eja')" class="hover:text-escola-gold transition">Educação de Jovens e Adultos (EJA)</a></li>
+            <li><a href="#aee" class="hover:text-escola-gold transition">Atendimento Especializado (AEE)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-extrabold uppercase tracking-wider text-escola-gold mb-4">Atendimento & Apoio</h3>
+          <ul class="space-y-2.5 text-sm text-white/85">
+            <li><a href="#extracurricular" class="hover:text-escola-gold transition">Atividades Extracurriculares</a></li>
+            <li><a href="#contato" onclick="switchUnit('sede')" class="hover:text-escola-gold transition">Endereço Sede Principal</a></li>
+            <li><a href="#contato" onclick="switchUnit('anexo')" class="hover:text-escola-gold transition">Endereço Anexo Ed. Infantil</a></li>
+            <li><a href="#meios-comunicacao" class="hover:text-escola-gold transition">Secretaria & Coordenação</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/75">
+        <p>© 2026 Escola Municipal 31 de Março — Arapiraca - AL. Todos os direitos reservados.</p>
+        <a
+          href="#aviso-unidades"
+          onclick="goToUnitsNotice(event)"
+          aria-label="Voltar ao início onde consta o aviso de localização das unidades"
+          class="btn-press inline-flex items-center gap-2 bg-white/15 hover:bg-escola-gold hover:text-escola-navy px-4 py-2 r-25 font-bold text-white transition"
+        >
+          <span>Voltar ao topo</span>
+          <span>↑</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="trophy-modal" role="dialog" aria-modal="true" aria-labelledby="trophy-modal-title" class="fixed inset-0 z-50 hidden bg-escola-navy/90 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white r-25 max-w-5xl w-full p-6 sm:p-10 shadow-2xl relative fade-slide max-h-[94vh] overflow-y-auto">
+      <button
+        type="button"
+        onclick="closeTrophyModal()"
+        aria-label="Fechar galeria de troféus"
+        class="absolute top-5 right-5 w-11 h-11 r-25 bg-escola-ice hover:bg-escola-navy hover:text-white font-extrabold text-lg transition"
+      >
+        ✕
+      </button>
+
+      <div class="text-center mb-7">
+        <span style="background-color: rgba(170, 132, 7, 0.15); color: #AA8407;" class="inline-block text-xs font-extrabold uppercase tracking-wider px-3.5 py-1 r-25 mb-2">
+          Sala de Conquistas
+        </span>
+        <h2 id="trophy-modal-title" class="text-2xl sm:text-3xl font-extrabold text-escola-navy">
+          Galeria de Troféus
+        </h2>
+      </div>
+
+      <div class="flex items-center justify-center gap-3 sm:gap-6">
+        <button
+          type="button"
+          onclick="changeTrophy(-1)"
+          aria-label="Troféu anterior"
+          class="btn-press w-11 h-11 sm:w-12 sm:h-12 r-25 bg-escola-navy text-white flex items-center justify-center shadow-md shrink-0 text-xl font-bold"
+        >
+          ‹
+        </button>
+
+        <div onclick="changeTrophy(-1)" class="hidden md:block w-44 h-56 r-25 overflow-hidden bg-[#0A0F1A] border-2 border-slate-300 cursor-pointer blur-[2px] opacity-65 scale-90 transition-all p-2">
+          <img id="trophy-prev-img" src="Imagens/Trofeús/trofeu4.png" alt="Troféu anterior" loading="lazy" decoding="async" class="w-full h-full object-contain" onerror="handlePhotoFallback(this, 'Troféu 4', '#AA8407')" />
+        </div>
+
+        <div style="border-color: #AA8407;" class="w-64 h-80 sm:w-80 sm:h-96 r-25 overflow-hidden bg-[#05080F] border-4 shadow-2xl shrink-0 p-3 flex items-center justify-center">
+          <img id="trophy-curr-img" src="Imagens/Trofeús/trofeu1.png" alt="Troféu em destaque" loading="lazy" decoding="async" class="w-full h-full object-contain transition-all duration-300" onerror="handlePhotoFallback(this, 'Troféu em Destaque', '#AA8407')" />
+        </div>
+
+        <div onclick="changeTrophy(1)" class="hidden md:block w-44 h-56 r-25 overflow-hidden bg-[#0A0F1A] border-2 border-slate-300 cursor-pointer blur-[2px] opacity-65 scale-90 transition-all p-2">
+          <img id="trophy-next-img" src="Imagens/Trofeús/trofeu2.png" alt="Próximo troféu" loading="lazy" decoding="async" class="w-full h-full object-contain" onerror="handlePhotoFallback(this, 'Troféu 2', '#AA8407')" />
+        </div>
+
+        <button
+          type="button"
+          onclick="changeTrophy(1)"
+          aria-label="Próximo troféu"
+          class="btn-press w-11 h-11 sm:w-12 sm:h-12 r-25 bg-escola-navy text-white flex items-center justify-center shadow-md shrink-0 text-xl font-bold"
+        >
+          ›
+        </button>
+      </div>
+
+      <div class="text-center max-w-xl mx-auto mt-6">
+        <span id="trophy-counter" style="color: #AA8407;" class="text-xs font-extrabold uppercase tracking-wider">Troféu 1 de 4</span>
+        <h3 id="trophy-title" class="text-xl sm:text-2xl font-extrabold text-escola-navy mt-1">
+          I Festival Arapiraca em Movimento — Atletismo
+        </h3>
+        <p id="trophy-desc" class="text-sm sm:text-base text-slate-600 mt-2 leading-relaxed">
+          Conquista alcançada pelos estudantes no <strong>I Festival Arapiraca em Movimento</strong>, na modalidade de <strong>Atletismo</strong>, celebrando o incentivo ao esporte educacional em Arapiraca.
+        </p>
+
+        <div id="trophy-dots" class="flex items-center justify-center gap-2.5 mt-4"></div>
+      </div>
+
+      <div class="mt-7 flex justify-center">
+        <button
+          type="button"
+          onclick="returnToHomeFromTrophy()"
+          class="btn-press bg-escola-navy text-white font-extrabold text-sm px-8 py-3.5 r-25 shadow-md"
+        >
+          Retornar à Tela Inicial
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modality-modal" role="dialog" aria-modal="true" aria-labelledby="mod-modal-title" class="fixed inset-0 z-50 hidden bg-escola-navy/85 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white r-25 max-w-3xl w-full overflow-hidden shadow-2xl relative fade-slide max-h-[92vh] overflow-y-auto">
+      <div id="mod-modal-banner" class="relative h-48 sm:h-56 bg-escola-navy overflow-hidden">
+        <img id="mod-modal-img" src="Imagens/ImagensCapas/EDFUND1/edfund1detalhamento.jpg" alt="Detalhamento da Modalidade" loading="lazy" decoding="async" class="w-full h-full object-cover" onerror="handlePhotoFallback(this, 'Detalhamento da Etapa de Ensino', '#1F438C')" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent flex items-end p-6">
+          <h3 id="mod-modal-banner-title" class="text-2xl sm:text-3xl font-extrabold text-white">
+            Aulas Lúdicas e Dinâmicas
+          </h3>
+        </div>
+        <button
+          type="button"
+          onclick="closeModalityModal()"
+          aria-label="Fechar detalhamento"
+          class="absolute top-4 right-4 w-10 h-10 r-25 bg-white/90 text-escola-navy hover:bg-white font-extrabold text-lg shadow-md"
+        >
+          ✕
+        </button>
+      </div>
+
+      <div class="p-6 sm:p-8">
+        <span id="mod-modal-badge" class="inline-block text-xs font-extrabold uppercase tracking-wider px-3.5 py-1 r-25 mb-3">
+          FUNDAMENTAL I (1º AO 5º ANO)
+        </span>
+
+        <h2 id="mod-modal-title" class="text-2xl sm:text-3xl font-extrabold text-escola-navy">
+          A Base do Raciocínio e Letramento
+        </h2>
+
+        <p id="mod-modal-desc" class="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed"></p>
+
+        <h4 id="mod-modal-pillars-heading" class="mt-6 pt-4 border-t border-slate-200 font-extrabold text-escola-navy text-base">
+          Nossos Pilares de Ensino:
+        </h4>
+
+        <div id="mod-modal-pillars" class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+
+        <div class="mt-7">
+          <button
+            type="button"
+            id="mod-modal-close-btn"
+            onclick="closeModalityModal()"
+            class="btn-press font-extrabold text-sm sm:text-base px-7 py-3.5 r-25 shadow-md"
+          >
+            Ok entendi, retornar à página
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-box" role="status" aria-live="polite" class="fixed bottom-5 right-5 z-50 hidden max-w-sm bg-escola-navy text-white border-2 border-escola-gold r-25 px-5 py-4 shadow-2xl flex items-center gap-3 fade-slide">
+    <span class="w-3 h-3 rounded-full bg-escola-gold shrink-0"></span>
+    <p id="toast-message" class="text-xs sm:text-sm font-semibold"></p>
+  </div>
+
+  <script src="assets/js/script.js" defer></script>
+</body>
+</html>
