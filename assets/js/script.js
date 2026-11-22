@@ -704,7 +704,7 @@ function startExtraAutoCarousel() {
   const imgEl = document.getElementById('extra-carousel-img');
   const tagEl = document.getElementById('extra-carousel-tag');
   const labelEl = document.getElementById('extra-carousel-label');
-  if (!imgEl || !labelEl) return;
+  if (!imgEl) return;
 
   if (extraSlides.length > 1) {
     preloadImage(extraSlides[1].img);
@@ -721,7 +721,7 @@ function startExtraAutoCarousel() {
       imgEl.onerror = function() { handlePhotoFallback(this, item.tag, '#182E59'); };
       imgEl.src = item.img;
       if (tagEl) tagEl.textContent = item.tag;
-      labelEl.textContent = item.label;
+      if (labelEl) labelEl.textContent = item.label;
       imgEl.style.opacity = '1';
     }, 300);
   }, 3800);
