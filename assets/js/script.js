@@ -464,7 +464,10 @@ function closeTrophyModal() {
 
 function returnToHomeFromTrophy() {
   closeTrophyModal();
-  goToUnitsNotice();
+  const premiacoesEl = document.getElementById('premiacoes');
+  if (premiacoesEl) {
+    premiacoesEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
 const modalitiesData = {
