@@ -613,7 +613,7 @@
           >
             <img
               id="gallery-center-img"
-              src="Imagens/AtividadesEstudantis/aula-leitura-digitacao.jpg"
+              src="Imagens/AtividadesEstudantis/aula-leitura-digitacao.jpeg"
               alt="Leitura Interpretativa e Digitação"
               loading="lazy"
               decoding="async"
@@ -1553,7 +1553,6 @@
                 </p>
               </div>
             </div>
-
             <div style="border-color: #185004;" class="hover-lift bg-white p-4 sm:p-5 r-25 flex items-start gap-4 border-[3px] shadow-lg">
               <div style="background-color: rgba(24, 80, 4, 0.1); border-color: rgba(24, 80, 4, 0.45);" class="w-14 h-14 p-2.5 r-25 border-2 flex items-center justify-center shrink-0">
                 <img
@@ -1574,18 +1573,16 @@
                 </p>
               </div>
             </div>
-
           </div>
-
-          <div class="lg:col-span-6 flex">
-            <div class="relative w-full h-[300px] sm:h-[360px] lg:h-[395px] r-25 overflow-hidden shadow-2xl border-2 border-white/25 bg-[#0F1E3C]">
+        <div class="lg:col-span-6 flex">
+            <div class="relative w-full h-[300px] sm:h-[360px] lg:h-full lg:min-h-[300px] r-25 overflow-hidden shadow-2xl border-2 border-white/25 bg-[#0F1E3C]">
               <img
                 id="extra-carousel-img"
                 src="Imagens/AtividadesExtraCurriculares/kits-robotica-componentes.jpeg"
                 alt="Alunos em Atividades Extracurriculares"
                 loading="lazy"
                 decoding="async"
-                class="w-full h-full object-cover object-center transition-opacity duration-700"
+                class="lg:absolute lg:inset-0 w-full h-full object-cover object-center transition-opacity duration-700"
                 onerror="handlePhotoFallback(this, 'Oficinas de Robótica e Tecnologia', '#182E59')"
               />
               <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0D1A36]/95 via-[#182E59]/70 to-transparent p-5 text-white">
@@ -1741,24 +1738,24 @@
 
               <div class="group p-6 sm:p-8 flex flex-col justify-between hover:bg-white/[0.04] transition-colors duration-300">
                 <div>
-                  <div class="flex items-center justify-between gap-2 mb-5">
-                    <div class="flex items-center gap-3.5">
-                      <div class="w-12 h-12 r-25 bg-white/10 group-hover:bg-white/20 flex items-center justify-center transition-colors">
-                        <img src="Imagens/Icones/contato-secretaria.png" alt="Secretaria" loading="lazy" decoding="async" class="w-7 h-7 object-contain invert group-hover:scale-110 transition-transform" onerror="handleIconFallback(this, 'doc')" />
+                  <div class="flex flex-col items-start lg:flex-row lg:items-center lg:justify-between gap-3 mb-5">
+                    <div class="flex items-center gap-3 min-w-0">
+                      <div class="w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] shrink-0 r-25 bg-white/10 group-hover:bg-white/20 flex items-center justify-center transition-colors">
+                        <img src="Imagens/Icones/contato-secretaria.png" alt="Secretaria" loading="lazy" decoding="async" class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] object-contain invert group-hover:scale-110 transition-transform" onerror="handleIconFallback(this, 'doc')" />
                       </div>
-                      <h3 class="text-xl sm:text-2xl font-extrabold tracking-wide uppercase">SECRETARIA</h3>
+                      <h3 class="text-base sm:text-xl lg:text-2xl font-extrabold tracking-wide uppercase">SECRETARIA</h3>
                     </div>
-                    <span class="inline-flex items-center gap-1.5 bg-white/10 text-escola-gold text-[11px] font-bold px-3 py-1 r-25">
-                      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="inline-flex items-center gap-2 shrink-0 whitespace-nowrap bg-white/10 text-escola-gold text-xs font-bold px-[14px] py-[6px] rounded-full">
+                      <span class="w-[8px] h-[8px] rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
                       Atendimento
                     </span>
                   </div>
 
                   <div class="space-y-3.5 text-sm sm:text-base">
                     <div class="flex items-center justify-between gap-2 bg-white/5 hover:bg-white/10 px-3.5 py-2.5 r-25 transition-colors">
-                      <a href="tel:+5582912345678" data-phone-link="secretaria" class="flex items-center gap-3 font-bold hover:text-escola-gold transition-colors">
+                      <a href="tel:+5582987331869" data-phone-link="secretaria" class="flex items-center gap-3 font-bold hover:text-escola-gold transition-colors">
                         <img src="Imagens/Icones/contato-telefone.png" alt="Telefone" loading="lazy" decoding="async" class="w-5 h-5 object-contain invert" onerror="handleIconFallback(this, 'phone')" />
-                        <span id="phone-text-secretaria">(82) 9 1234-5678</span>
+                        <span id="phone-text-secretaria">(82) 9 8733-1869</span>
                       </a>
                       <button
                         type="button"
@@ -1778,7 +1775,7 @@
                 <div class="mt-7">
                   <a
                     id="link-whatsapp-secretaria"
-                    href="https://wa.me/5582912345678?text=Ol%C3%A1%2C%20gostaria%20de%20atendimento%20da%20Secretaria%20da%20Escola%20Municipal%2031%20de%20Mar%C3%A7o."
+                    href="https://wa.me/+5582987331869"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-official-link="whatsapp-secretaria"
@@ -1794,24 +1791,24 @@
 
               <div class="group p-6 sm:p-8 flex flex-col justify-between hover:bg-white/[0.04] transition-colors duration-300">
                 <div>
-                  <div class="flex items-center justify-between gap-2 mb-5">
-                    <div class="flex items-center gap-3.5">
-                      <div class="w-12 h-12 r-25 bg-white/10 group-hover:bg-white/20 flex items-center justify-center transition-colors">
-                        <img src="Imagens/Icones/contato-coordenacao.png" alt="Coordenação" loading="lazy" decoding="async" class="w-7 h-7 object-contain invert group-hover:scale-110 transition-transform" onerror="handleIconFallback(this, 'collab')" />
+                  <div class="flex flex-col items-start lg:flex-row lg:items-center lg:justify-between gap-3 mb-5">
+                    <div class="flex items-center gap-3 min-w-0">
+                      <div class="w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] shrink-0 r-25 bg-white/10 group-hover:bg-white/20 flex items-center justify-center transition-colors">
+                      <img src="Imagens/Icones/contato-coordenacao.png" alt="Coordenação" loading="lazy" decoding="async" class="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] object-contain invert group-hover:scale-110 transition-transform" onerror="handleIconFallback(this, 'collab')" />
                       </div>
-                      <h3 class="text-xl sm:text-2xl font-extrabold tracking-wide uppercase">COORDENAÇÃO</h3>
+                      <h3 class="text-base sm:text-xl lg:text-2xl font-extrabold tracking-wide uppercase">COORDENAÇÃO</h3>
                     </div>
-                    <span class="inline-flex items-center gap-1.5 bg-white/10 text-escola-gold text-[11px] font-bold px-3 py-1 r-25">
-                      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="inline-flex items-center gap-2 shrink-0 whitespace-nowrap bg-white/10 text-escola-gold text-xs font-bold px-[14px] py-[6px] rounded-full">
+                      <span class="w-[8px] h-[8px] rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
                       Pedagógico
                     </span>
                   </div>
 
                   <div class="space-y-3.5 text-sm sm:text-base">
                     <div class="flex items-center justify-between gap-2 bg-white/5 hover:bg-white/10 px-3.5 py-2.5 r-25 transition-colors">
-                      <a href="tel:+5582912345678" data-phone-link="coordenacao" class="flex items-center gap-3 font-bold hover:text-escola-gold transition-colors">
+                      <a href="tel:+5582996602772" data-phone-link="coordenacao" class="flex items-center gap-3 font-bold hover:text-escola-gold transition-colors">
                         <img src="Imagens/Icones/contato-telefone.png" alt="Telefone" loading="lazy" decoding="async" class="w-5 h-5 object-contain invert" onerror="handleIconFallback(this, 'phone')" />
-                        <span id="phone-text-coordenacao">(82) 9 1234-5678</span>
+                        <span id="phone-text-coordenacao">(82) 9 9660-2772</span>
                       </a>
                       <button
                         type="button"
@@ -1831,7 +1828,7 @@
                 <div class="mt-7">
                   <a
                     id="link-whatsapp-coordenacao"
-                    href="https://wa.me/5582912345678?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20Coordena%C3%A7%C3%A3o%20da%20Escola%20Municipal%2031%20de%20Mar%C3%A7o."
+                    href="https://wa.me/+5582996602772"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-official-link="whatsapp-coordenacao"
