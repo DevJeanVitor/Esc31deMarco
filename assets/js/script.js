@@ -231,7 +231,7 @@ function toggleMobileMenu(forceState) {
 
 const galleryPhotos = [
   {
-    img: 'Imagens/AtividadesEstudantis/aula-leitura-digitacao.jpg',
+    img: 'Imagens/AtividadesEstudantis/aula-leitura-digitacao.jpeg',
     color: '#3DADF2',
     textColor: '#167BB8',
     title: 'Leitura Interpretativa e Digitação',
